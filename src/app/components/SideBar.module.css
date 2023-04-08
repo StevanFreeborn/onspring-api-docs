@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #848586;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.onspring {
+  font-weight: bold;
+  color: white;
+}
+
+.api {
+  font-weight: bold;
+  color: #ee7203;
+}
