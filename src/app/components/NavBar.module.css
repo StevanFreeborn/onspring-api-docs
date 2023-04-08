@@ -19,4 +19,37 @@
   text-decoration: none;
   color: #64adac;
   font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownMenu {
+  position: absolute;
+  display: none;
+}
+
+.dropdownMenuOpen {
+  position: absolute;
+  display: block;
+  top: 3.25rem;
+  right: 11.75rem;
+  padding: 0.5rem 2rem;
+  z-index: 100;
+  box-shadow: 0 0 2px 0.2px #05254a;
+  border-radius: 0.25rem;
+  background-color: #0b3766;
+}
+
+.dropdownMenuOpen::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 3.75rem;
+  border: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #0b3766;
+}
+
+.chevron {
+  margin-left: 0.5rem;
 }
