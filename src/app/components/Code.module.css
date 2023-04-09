@@ -1,0 +1,21 @@
+.snippetContainer {
+  border-radius: 10px;
+  background-color: #0b3766;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.snippetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #194488;
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.snippetContent {
+  padding: 0.5rem 1rem;
+}

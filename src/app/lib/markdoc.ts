@@ -41,6 +41,9 @@ const markDocConfig = {
         language: {
           type: 'string',
         },
+        heading: {
+          type: 'string',
+        },
       },
     },
   },

@@ -1,7 +1,11 @@
-# Example
+# Base URL
 
-This is the example for the introduction page.
+The base url for the Onspring API will be the same for all instances regardless of whether the instances is a development, test, or production instance.
 
-{% code language="javascript" %}
-console.log('hello world');
+{% code heading="BASE URL" language="text" %}
+
+```text
+https://api.onspring.com
+```
+
 {% /code %}
