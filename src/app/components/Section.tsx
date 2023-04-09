@@ -1,18 +1,14 @@
+import { ReactNode } from 'react';
 import styles from './Section.module.css';
 
 export default function Section({
-  copy,
-  example,
+  children,
 }: {
-  copy: string;
-  example: string;
+  children: ReactNode;
 }) {
   return (
-    <section
-      className={styles.container}
-      dangerouslySetInnerHTML={{
-        __html: `${copy}${example}`,
-      }}
-    ></section>
+    <section className={styles.container}>
+      {children}
+    </section>
   );
 }

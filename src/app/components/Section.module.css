@@ -18,3 +18,8 @@
 .container>article {
   flex: 1;
 }
+
+.container>article>p {
+  margin-top: 20px;
+  color: #c1c9d2
+}

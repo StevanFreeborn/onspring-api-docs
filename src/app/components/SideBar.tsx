@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { DocsStructure } from '../types/types.js';
+import { Doc, DocsStructure } from '../types/types.js';
 import styles from './SideBar.module.css';
 
-function TreeNode({ doc }: { doc: DocsStructure }) {
+function TreeNode({ doc }: { doc: Doc }) {
   const [isExpanded, setIsExpanded] =
     useState<boolean>(true);
 
@@ -62,7 +62,7 @@ function TreeNode({ doc }: { doc: DocsStructure }) {
   );
 }
 
-function ListTree({ docs }: { docs: DocsStructure[] }) {
+function ListTree({ docs }: { docs: Doc[] }) {
   return (
     <ul className={styles.list}>
       {docs.map(d => (
@@ -76,8 +76,8 @@ export default function SideBar({
   versionOne,
   versionTwo,
 }: {
-  versionOne: DocsStructure[];
-  versionTwo: DocsStructure[];
+  versionOne: DocsStructure;
+  versionTwo: DocsStructure;
 }) {
   return (
     <div className={styles.container}>
@@ -85,7 +85,7 @@ export default function SideBar({
         <span className={styles.onspring}>Onspring</span>{' '}
         <span className={styles.api}>API</span>
       </h1>
-      <ListTree docs={versionTwo} />
+      <ListTree docs={versionTwo.docs} />
     </div>
   );
 }
