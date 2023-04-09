@@ -25,7 +25,4 @@ body {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  max-width: 1450px;
-  margin: 0 auto;
-  padding: 20px;
 }

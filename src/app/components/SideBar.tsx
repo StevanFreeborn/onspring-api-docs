@@ -14,13 +14,11 @@ function TreeNode({ doc }: { doc: DocsStructure }) {
   return (
     <li className={styles.listItem}>
       {hasChildren ? (
-        <div className={styles.expandable}>
-          <a
-            onClick={() => setIsExpanded(!isExpanded)}
-            className={styles.link}
-          >
-            {doc.title}
-          </a>
+        <div
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={styles.expandable}
+        >
+          <a className={styles.link}>{doc.title}</a>
           {isExpanded ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
