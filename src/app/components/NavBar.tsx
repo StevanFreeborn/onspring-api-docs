@@ -91,6 +91,7 @@ export default function NavBar() {
           <Link
             href="https://api.onspring.com/swagger"
             className={styles.navLink}
+            target="_blank"
           >
             Swagger
           </Link>
@@ -99,6 +100,7 @@ export default function NavBar() {
           <Link
             href="https://onspring.com/customer-service/admin-support/"
             className={styles.navLink}
+            target="_blank"
           >
             Support
           </Link>
