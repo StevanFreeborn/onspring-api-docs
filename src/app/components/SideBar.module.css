@@ -9,6 +9,7 @@
 .title {
   font-size: 1rem;
   white-space: nowrap;
+  margin-bottom: 1rem;
 }
 
 .onspring {
@@ -19,4 +20,41 @@
 .api {
   font-weight: bold;
   color: #ee7203;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #a3acb9;
+}
+
+.link:hover {
+  color: white;
+}
+
+.expandable {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chevron {
+  margin-left: 0.5rem;
 }
