@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {% .articleTitle %}
 
 The Onspring API is organized around REST. It enables external programs to retrieve, save, and delete data within your Onspring instance. The Onspring API implements version 3 of the Open API Specification (OAS).
 
