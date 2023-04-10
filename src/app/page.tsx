@@ -12,10 +12,13 @@ export default function Home() {
   return (
     <main className={styles.container}>
       {versionTwoSections.map(section => (
-        <Section key={section.title}>
-          {section.copy}
-          {section.example}
-        </Section>
+        <>
+          <Section key={section.title}>
+            {section.copy}
+            {section.example}
+          </Section>
+          <div className={styles.divider}>&nbsp;</div>
+        </>
       ))}
     </main>
   );

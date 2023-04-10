@@ -16,6 +16,71 @@
   font-size: 0.8rem;
 }
 
-.snippetContent {
-  padding: 0.5rem 1rem;
+.snippetContent>pre {
+  overflow: auto;
+  padding: 1rem;
+  scrollbar-color: #043160 #0b3766;
+}
+
+.snippetContent>pre::-webkit-scrollbar {
+  background-color: #0b3766;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.snippetContent>pre::-webkit-scrollbar-thumb {
+  background-color: #043160;
+  border-radius: 10px;
+}
+
+@-moz-document url-prefix() {
+  .snippetContent>pre {
+    margin-right: 1rem;
+  }
+}
+
+.copyButtonContainer {
+  position: relative;
+}
+
+.copyButton {
+  background-color: #194488;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.copyButton:hover {
+  color: #ee7203;
+}
+
+.tooltip {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -175%);
+  white-space: nowrap;
+  background-color: #0b3766;
+  padding: 0.5rem;
+  z-index: 100;
+  box-shadow: 0 0 2px 0.2px #05254a;
+  border-radius: 0.25rem;
+  width: 100px;
+  text-align: center;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border: 0.5rem solid transparent;
+  border-top: 0.5rem solid #0b3766;
+  top: 100%;
+  left: 2.55rem;
+}
+
+.tooltipHidden {
+  display: none;
 }

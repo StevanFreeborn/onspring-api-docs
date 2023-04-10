@@ -8,6 +8,14 @@ import './globals.css';
 export const metadata = {
   title: 'Onspring API Docs',
   description: 'Documentation for the Onspring API',
+  icons: {
+    icon: [
+      {
+        url: 'images/favicon.ico',
+        type: 'image/x-icon',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
