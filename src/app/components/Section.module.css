@@ -26,12 +26,12 @@
 
 .container>article>p {
   margin-top: 20px;
-  color: #c1c9d2
+  color: #c1c9d2;
 }
 
 .container>article>p>code {
   background-color: #0b3766;
-  padding: 0.2rem 0.5rem;
+  padding: 0.1rem 0.5rem;
   border-radius: 5px;
 }
 
