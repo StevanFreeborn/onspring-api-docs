@@ -2,16 +2,25 @@
 
 import Link from 'next/link.js';
 import { useState } from 'react';
+import { DocsStructure } from '../types/types.js';
 import styles from './NavBar.module.css';
 
-function NavbarDropdown() {
-  const versions = ['Version 1', 'Version 2'];
+function NavbarDropdown({ version }: { version: string }) {
+  const versions = {
+    version_001: {
+      name: 'Version 1',
+      path: '/version-1',
+    },
+    version_002: {
+      name: 'Version 2',
+      path: '/',
+    },
+  } as { [key: string]: { name: string; path: string } };
+
+  const currentVersion = versions[version];
 
   const [isDropdownOpen, setIsDropdownOpen] =
     useState<boolean>(false);
-
-  const [version, setVersion] =
-    useState<string>('Version 2');
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -23,7 +32,7 @@ function NavbarDropdown() {
         className={styles.navLink}
         onClick={handleDropdownToggle}
       >
-        {version}{' '}
+        {currentVersion.name}{' '}
         {isDropdownOpen ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,31 +70,35 @@ function NavbarDropdown() {
             : styles.dropdownMenu
         }
       >
-        {versions
+        {Object.keys(versions)
           .filter(v => v !== version)
           .map(v => (
-            <a
+            <Link
+              href={`${versions[v].path}`}
               key={v}
               className={styles.navLink}
               onClick={() => {
-                setVersion(v);
                 setIsDropdownOpen(false);
               }}
             >
-              {v}
-            </a>
+              {versions[v].name}
+            </Link>
           ))}
       </div>
     </>
   );
 }
 
-export default function NavBar() {
+export default function NavBar({
+  version,
+}: {
+  version: DocsStructure;
+}) {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <NavbarDropdown />
+          <NavbarDropdown version={version.version} />
         </li>
         <li className={styles.navItem}>
           <Link

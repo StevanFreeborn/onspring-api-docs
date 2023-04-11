@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import React, { ReactNode } from 'react';
 import Code from '../components/Code';
-import { Doc, Section } from './../types/types';
+import { Doc, DocSection } from './../types/types';
 const DOCS_PATH = path.join(process.cwd(), 'src/docs');
 
 function getCopyPath(version: string, doc: Doc): string {
@@ -78,8 +78,8 @@ function getExampleChild(version: string, doc: Doc) {
 export function loadSections(
   version: string,
   docs: Doc[],
-  sections: Section[] = []
-): Section[] {
+  sections: DocSection[] = []
+): DocSection[] {
   for (const doc of docs) {
     sections.push({
       title: doc.title,

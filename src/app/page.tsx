@@ -1,25 +1,22 @@
 import { versionTwo } from '@/docs/version_002/docsStructure';
-import Section from './components/Section';
+import Main from './components/Main';
+import NavBar from './components/NavBar';
+import SideBar from './components/SideBar';
 import { loadSections } from './lib/markdoc';
-import styles from './page.module.css';
 
-export default function Home() {
+export default function Page() {
   const versionTwoSections = loadSections(
     versionTwo.version,
     versionTwo.docs
   );
 
   return (
-    <main className={styles.container}>
-      {versionTwoSections.map(section => (
-        <>
-          <Section key={section.title}>
-            {section.copy}
-            {section.example}
-          </Section>
-          <div className={styles.divider}>&nbsp;</div>
-        </>
-      ))}
-    </main>
+    <>
+      <SideBar version={versionTwo} />
+      <div className="container">
+        <NavBar version={versionTwo} />
+        <Main versionSections={versionTwoSections} />
+      </div>
+    </>
   );
 }

@@ -76,11 +76,9 @@ function ListTree({ docs }: { docs: Doc[] }) {
 }
 
 export default function SideBar({
-  versionOne,
-  versionTwo,
+  version,
 }: {
-  versionOne: DocsStructure;
-  versionTwo: DocsStructure;
+  version: DocsStructure;
 }) {
   return (
     <div className={styles.container}>
@@ -88,7 +86,7 @@ export default function SideBar({
         <span className={styles.onspring}>Onspring</span>{' '}
         <span className={styles.api}>API</span>
       </h1>
-      <ListTree docs={versionTwo.docs} />
+      <ListTree docs={version.docs} />
     </div>
   );
 }

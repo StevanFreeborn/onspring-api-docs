@@ -13,7 +13,7 @@ export type Doc = {
   children?: Doc[];
 };
 
-export type Section = {
+export type DocSection = {
   title: string;
   copy: ReactNode;
   example: ReactNode;
