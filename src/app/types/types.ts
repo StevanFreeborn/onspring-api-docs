@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 export type DocsStructure = {
   version: string;
   docs: Doc[];
