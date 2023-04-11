@@ -2,7 +2,7 @@
 
 ```curl
 curl --location 'https://api.onspring.com/Records/appId/195' \
---header 'X-ApiKey: 61642d8c686f9e8747e42af8/52cae9a9-4c49-48b6-a3fe-10a48d46ac69'
+--header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000'
 ```
 
 {% /code %}
