@@ -81,11 +81,13 @@ export function loadSections(
   sections: DocSection[] = []
 ): DocSection[] {
   for (const doc of docs) {
-    sections.push({
-      title: doc.title,
-      copy: getCopyChild(version, doc),
-      example: getExampleChild(version, doc),
-    });
+    if (doc.copy && doc.example) {
+      sections.push({
+        title: doc.title,
+        copy: getCopyChild(version, doc),
+        example: getExampleChild(version, doc),
+      });
+    }
 
     if (doc.children && doc.children.length > 0) {
       loadSections(version, doc.children, sections);
