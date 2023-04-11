@@ -1,9 +1,10 @@
-import Markdoc from '@markdoc/markdoc';
+import { default as Markdoc } from '@markdoc/markdoc';
 import fs from 'fs';
 import path from 'path';
 import React, { ReactNode } from 'react';
 import Code from '../components/Code';
 import { Doc, DocSection } from './../types/types';
+
 const DOCS_PATH = path.join(process.cwd(), 'src/docs');
 
 function getCopyPath(version: string, doc: Doc): string {
@@ -36,7 +37,6 @@ const markDocConfig = {
   tags: {
     code: {
       render: 'Code',
-      children: ['text'],
       attributes: {
         language: {
           type: 'string',

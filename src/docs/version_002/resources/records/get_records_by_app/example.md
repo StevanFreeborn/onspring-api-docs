@@ -9,7 +9,7 @@ curl --location 'https://api.onspring.com/Records/appId/195' \
 
 {% code heading="RESPONSE" language="json" %}
 
-```json
+```json {% .language-json %}
 {
   "pageNumber": 1,
   "pageSize": 1,

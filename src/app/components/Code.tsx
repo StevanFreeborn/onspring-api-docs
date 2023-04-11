@@ -1,6 +1,10 @@
 'use client';
 
-import { MouseEvent, useState } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
+import 'prismjs/themes/prism.css';
+
+import { MouseEvent, useEffect, useState } from 'react';
 import styles from './Code.module.css';
 
 function CodeCopyButton() {
@@ -70,6 +74,10 @@ export default function Code({
   language: string;
   heading: string;
 }) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <div className={styles.snippetContainer}>
       <div className={styles.snippetHeader}>
