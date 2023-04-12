@@ -51,7 +51,9 @@ function TreeNode({ doc }: { doc: Doc }) {
         </div>
       ) : (
         <a
-          href={`#${doc.title.toLowerCase()}`}
+          href={`#${doc.title
+            .replaceAll(' ', '-')
+            .toLowerCase()}`}
           className={styles.link}
         >
           {doc.title}

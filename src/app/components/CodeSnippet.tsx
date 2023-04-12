@@ -126,7 +126,7 @@ export default function CodeSnippet({
       if (React.isValidElement(child)) {
         const languageClassParts =
           child.props.className.split('-');
-        if (languageClassParts.length == 2) {
+        if (languageClassParts.length > 1) {
           const language = languageClassParts[1];
           return language;
         }
