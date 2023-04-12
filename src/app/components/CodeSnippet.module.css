@@ -20,6 +20,7 @@
   overflow: auto;
   padding: 1rem;
   scrollbar-color: #043160 #0b3766;
+  max-height: calc(100vh - 280px);
 }
 
 .snippetContent>pre::-webkit-scrollbar {

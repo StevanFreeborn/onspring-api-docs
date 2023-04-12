@@ -2,7 +2,8 @@ import { default as Markdoc } from '@markdoc/markdoc';
 import fs from 'fs';
 import path from 'path';
 import React, { ReactNode } from 'react';
-import Code from '../components/Code';
+import CodeSnippet from '../components/CodeSnippet';
+import Fence from '../components/Fence';
 import { Doc, DocSection } from './../types/types';
 
 const DOCS_PATH = path.join(process.cwd(), 'src/docs');
@@ -34,14 +35,27 @@ function getExamplePath(version: string, doc: Doc): string {
 }
 
 const markDocConfig = {
-  tags: {
-    code: {
-      render: 'Code',
+  nodes: {
+    fence: {
+      render: 'Fence',
       attributes: {
         language: {
           type: 'string',
         },
+        content: {
+          type: 'string',
+        },
+      },
+    },
+  },
+  tags: {
+    code: {
+      render: 'CodeSnippet',
+      attributes: {
         heading: {
+          type: 'string',
+        },
+        defaultLanguage: {
           type: 'string',
         },
       },
@@ -58,7 +72,8 @@ function parseMarkdown(sourcePath: string): ReactNode {
   );
   const children = Markdoc.renderers.react(content, React, {
     components: {
-      Code: Code,
+      CodeSnippet: CodeSnippet,
+      Fence: Fence,
     },
   });
 

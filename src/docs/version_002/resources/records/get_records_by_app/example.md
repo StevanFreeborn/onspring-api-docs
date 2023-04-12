@@ -1,15 +1,19 @@
-{% code heading="GET /Records/appId/{appID}" language="text" %}
+{% code heading="GET /Records/appId/{appID}" defaultLanguage="bash" %}
 
-```curl
+```bash
 curl --location 'https://api.onspring.com/Records/appId/195' \
 --header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000'
 ```
 
+```js
+var request = require('request');
+```
+
 {% /code %}
 
-{% code heading="RESPONSE" language="json" %}
+{% code heading="RESPONSE" defaultLanguage="json" %}
 
-```json {% .language-json %}
+```json
 {
   "pageNumber": 1,
   "pageSize": 1,

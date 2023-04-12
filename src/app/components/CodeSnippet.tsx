@@ -1,13 +1,14 @@
 'use client';
 
-import Prism from 'prismjs';
-import 'prismjs/components/prism-json';
-import 'prismjs/themes/prism.css';
+import {
+  Children,
+  MouseEvent,
+  ReactElement,
+  useState,
+} from 'react';
+import styles from './CodeSnippet.module.css';
 
-import { MouseEvent, useEffect, useState } from 'react';
-import styles from './Code.module.css';
-
-function CodeCopyButton() {
+function CodeSnippetCopyButton() {
   const [copyButtonTooltip, setCopyButtonTooltip] =
     useState<boolean>(false);
 
@@ -65,27 +66,42 @@ function CodeCopyButton() {
   );
 }
 
-export default function Code({
+function SnippetLanguageDropdown() {}
+
+export default function CodeSnippet({
   children,
-  language,
   heading,
+  defaultLanguage,
 }: {
-  children: string;
-  language: string;
+  children: ReactElement;
   heading: string;
+  defaultLanguage: string;
 }) {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<string>(defaultLanguage);
+
+  const snippetLanguages = Children.toArray(children).map(
+    (child: any) => child.props.className.split('-')[1]
+  );
 
   return (
     <div className={styles.snippetContainer}>
       <div className={styles.snippetHeader}>
         <div>{heading}</div>
-        <CodeCopyButton />
+        <CodeSnippetCopyButton />
       </div>
       <div className={styles.snippetContent}>
-        {children}
+        <pre>
+          {Children.toArray(children)
+            .filter(
+              (child: any) =>
+                child.props.className ===
+                `language-${defaultLanguage}`
+            )
+            .map(child => {
+              return child;
+            })}
+        </pre>
       </div>
     </div>
   );
