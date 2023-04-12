@@ -5,7 +5,7 @@ curl --location 'https://api.onspring.com/Records/appId/195' \
 --header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000'
 ```
 
-```js
+```javascript
 var request = require('request');
 ```
 

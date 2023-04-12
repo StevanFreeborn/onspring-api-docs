@@ -1,9 +1,9 @@
 'use client';
 
-import {
+import React, {
   Children,
   MouseEvent,
-  ReactElement,
+  ReactNode,
   useState,
 } from 'react';
 import styles from './CodeSnippet.module.css';
@@ -23,7 +23,7 @@ function CodeSnippetCopyButton() {
 
     const target = e.currentTarget;
     const code =
-      target.parentElement?.parentElement?.parentElement?.querySelector(
+      target.parentElement?.parentElement?.parentElement?.parentElement?.querySelector(
         'pre'
       )?.innerText ?? '';
 
@@ -66,37 +66,100 @@ function CodeSnippetCopyButton() {
   );
 }
 
-function SnippetLanguageDropdown() {}
+function SnippetLanguageDropdown({
+  selectedLanguage,
+  snippetLanguages,
+  handleSelectChange,
+}: {
+  selectedLanguage: string;
+  snippetLanguages: string[];
+  handleSelectChange: (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => void;
+}) {
+  return (
+    <div className={styles.dropdownContainer}>
+      <div className={styles.dropdown}>
+        <select
+          title="Select a language"
+          className={styles.dropdownSelect}
+          value={selectedLanguage}
+          onChange={handleSelectChange}
+        >
+          {snippetLanguages.map(language => {
+            return (
+              <option
+                key={language}
+                value={language}
+                className={styles.selectItem}
+              >
+                {language}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+    </div>
+  );
+}
 
 export default function CodeSnippet({
   children,
   heading,
   defaultLanguage,
 }: {
-  children: ReactElement;
+  children: ReactNode;
   heading: string;
   defaultLanguage: string;
 }) {
   const [selectedLanguage, setSelectedLanguage] =
     useState<string>(defaultLanguage);
 
+  const handleSelectChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedLanguage(e.target.value);
+  };
+
   const snippetLanguages = Children.toArray(children).map(
-    (child: any) => child.props.className.split('-')[1]
+    child => {
+      if (React.isValidElement(child)) {
+        const languageClassParts =
+          child.props.className.split('-');
+        if (languageClassParts.length == 2) {
+          const language = languageClassParts[1];
+          return language;
+        }
+      }
+    }
   );
 
   return (
     <div className={styles.snippetContainer}>
       <div className={styles.snippetHeader}>
         <div>{heading}</div>
-        <CodeSnippetCopyButton />
+        <div className={styles.controlsContainer}>
+          {snippetLanguages.length > 1 ? (
+            <>
+              <SnippetLanguageDropdown
+                selectedLanguage={selectedLanguage}
+                snippetLanguages={snippetLanguages}
+                handleSelectChange={handleSelectChange}
+              />
+              <div className={styles.spacer} />
+            </>
+          ) : null}
+          <CodeSnippetCopyButton />
+        </div>
       </div>
       <div className={styles.snippetContent}>
         <pre>
           {Children.toArray(children)
             .filter(
-              (child: any) =>
+              child =>
+                React.isValidElement(child) &&
                 child.props.className ===
-                `language-${defaultLanguage}`
+                  `language-${selectedLanguage}`
             )
             .map(child => {
               return child;
