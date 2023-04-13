@@ -1,6 +1,6 @@
 # The Values in a Raw Response
 
-{% code Heading="RAW" defaultLanguage="json" %}
+{% code heading="RAW" defaultLanguage="json" %}
 
 ```json
 {
@@ -58,7 +58,7 @@
 
 # The Values in a Formatted Response
 
-{% code Heading="RAW" defaultLanguage="json" %}
+{% code heading="RAW" defaultLanguage="json" %}
 
 ```json
 {
