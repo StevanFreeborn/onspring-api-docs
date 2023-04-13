@@ -24,18 +24,24 @@
   max-width: 600px;
 }
 
+.container>article:nth-child(2) {
+  position: sticky;
+  top: 0;
+}
+
 .container>article>p {
   margin-top: 20px;
   color: #c1c9d2;
 }
 
-.container>article>p>code {
+.container>article code {
   background-color: #0b3766;
   padding: 0.1rem 0.5rem;
   border-radius: 5px;
 }
 
 .container>article:nth-child(1)>h1 {
+  color: #ee7203;
   font-size: 40px;
   font-weight: bold;
 }
@@ -46,7 +52,8 @@
   }
 }
 
-.container>article>h2 {
+.container>article h2,
+.container>article h3 {
   margin-top: 1rem;
 }
 
