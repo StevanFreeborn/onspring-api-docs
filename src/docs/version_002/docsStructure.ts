@@ -2,6 +2,7 @@ import { DocsStructure } from '@/app/types/types';
 
 export const versionTwo: DocsStructure = {
   version: 'version_002',
+  hasSwagger: true,
   docs: [
     {
       title: 'Introduction',
@@ -13,6 +14,13 @@ export const versionTwo: DocsStructure = {
     {
       title: 'Authentication',
       folder: 'authentication',
+      copy: 'copy.md',
+      example: 'example.md',
+      children: [],
+    },
+    {
+      title: 'Pagination',
+      folder: 'pagination',
       copy: 'copy.md',
       example: 'example.md',
       children: [],

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export type DocsStructure = {
   version: string;
+  hasSwagger: boolean;
   docs: Doc[];
 };
 

@@ -65,7 +65,7 @@ These are objects representing a field value in a record. They will comprise the
 ---
 
 - TimeSpan
-- A [Time Span](#time-span-value) value.
+- A [Time Span](#time-span-field-value) value.
 - `object`
 
 ---
@@ -95,13 +95,13 @@ These are objects representing a field value in a record. They will comprise the
 ---
 
 - AttachmentList
-- A list of [Attachment](#attachment-value) values.
+- A list of [Attachment](#attachment-field-value) values.
 - `object[]`
 
 ---
 
 - ScoringGroupList
-- A list of [Scoring Group](#scoring-group-value) values.
+- A list of [Scoring Group](#scoring-group-field-value) values.
 - `object[]`
 
 ---
@@ -112,7 +112,7 @@ These are objects representing a field value in a record. They will comprise the
 
 {% /table %}
 
-### Time Span Value {% #time-span-value %}
+### Time Span Field Value {% #time-field-span-value %}
 
 {% table .propertiesTable %}
 
@@ -152,7 +152,7 @@ These are objects representing a field value in a record. They will comprise the
 
 {% /table %}
 
-### Attachment Value {% #attachment-value %}
+### Attachment Field Value {% #attachment-field-value %}
 
 {% table .propertiesTable %}
 
@@ -186,7 +186,7 @@ These are objects representing a field value in a record. They will comprise the
 
 {% /table %}
 
-### Scoring Group Value {% #scoring-group-value %}
+### Scoring Group Field Value {% #scoring-group-field-value %}
 
 {% table .propertiesTable %}
 

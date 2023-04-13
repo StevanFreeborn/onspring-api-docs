@@ -101,13 +101,15 @@ export default function NavBar({
           <NavbarDropdown version={version.version} />
         </li>
         <li className={styles.navItem}>
-          <Link
-            href="https://api.onspring.com/swagger"
-            className={styles.navLink}
-            target="_blank"
-          >
-            Swagger
-          </Link>
+          {version.hasSwagger ? (
+            <Link
+              href="https://api.onspring.com/swagger"
+              className={styles.navLink}
+              target="_blank"
+            >
+              Swagger
+            </Link>
+          ) : null}
         </li>
         <li className={styles.navItem}>
           <Link

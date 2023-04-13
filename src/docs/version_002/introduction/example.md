@@ -9,3 +9,11 @@ https://api.onspring.com
 ```
 
 {% /code %}
+
+{% code heading="X-API-VERSION" defaultLanguage="text" %}
+
+```text
+X-Api-Version: 2
+```
+
+{% /code %}

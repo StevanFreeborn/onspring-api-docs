@@ -1,5 +1,7 @@
 # The Field Value Object
 
+The following snippet contains an example of field value objects for each of the possible field value types.
+
 {% code heading="FIELD VALUES" defaultLanguage="json" %}
 
 ```json
