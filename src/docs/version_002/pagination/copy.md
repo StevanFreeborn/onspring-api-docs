@@ -14,16 +14,19 @@ When making a request to one of the endpoints that support pagination you can us
 {% table .propertiesTable %}
 
 - Parameter Name
+- Data Type
 - Description
 
 ---
 
 - PageNumber
+- `number`
 - The page number to retrieve. The default value is `1`.
 
 ---
 
 - PageSize
+- `number`
 - The number of objects to retrieve per page. The default value is `50`. The maximum value is `1000`.
 
 {% /table %}

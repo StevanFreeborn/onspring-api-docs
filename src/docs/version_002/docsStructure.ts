@@ -19,6 +19,13 @@ export const versionTwo: DocsStructure = {
       children: [],
     },
     {
+      title: 'Data Format',
+      folder: 'data_format',
+      copy: 'copy.md',
+      example: 'example.md',
+      children: [],
+    },
+    {
       title: 'Pagination',
       folder: 'pagination',
       copy: 'copy.md',

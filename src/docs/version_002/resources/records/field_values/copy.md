@@ -142,13 +142,13 @@ These are objects representing a field value in a record. They will comprise the
 
 - endByDate
 - `string`
-- The end date of the time span. Used if `recurrence` is set to `EndByDate`.
+- The end date of the time span. This will only be returned if `recurrence` is set to `EndByDate`.
 
 ---
 
 - endAfterOccurrences
 - `number`
-- The number of occurrences of the time span. Used if `recurrence` is set to `EndAfterOccurrences`.
+- The number of occurrences of the time span. This will only be returned if `recurrence` is set to `EndAfterOccurrences`.
 
 {% /table %}
 
@@ -183,6 +183,12 @@ These are objects representing a field value in a record. They will comprise the
 - storageLocation
 - `string`
 - The storage location of the file. Can be one of the following values: `Internal`, `OneDrive`, `GoogleDrive`.
+
+---
+
+- downloadLink
+- `string`
+- The download link for the file. This will only be returned if the `storageLocation` is not `Internal`.
 
 {% /table %}
 
