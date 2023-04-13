@@ -13,19 +13,19 @@ These are objects representing a field value in a record. They will comprise the
 ---
 
 - type
-- string
+- `string`
 - The type of the field.
 
 ---
 
 - fieldId
-- number
+- `number`
 - The id of the field.
 
 ---
 
 - value
-- object
+- `object`
 - The value of the field.
 
 {% /table %}
@@ -123,26 +123,32 @@ These are objects representing a field value in a record. They will comprise the
 ---
 
 - quantity
-- number
+- `number`
 - The number of the specified increment.
 
 ---
 
 - increment
-- string
+- `string`
 - The increment of time. Can be one of the following values: `Years`, `Months`, `Days`, `Hours`, `Minutes`, `Seconds`.
 
 ---
 
 - recurrence
-- string
+- `string`
 - The recurrence of the time span. Can be one of the following values: `None`, `EndByDate`, `EndAfterOccurrences`.
 
 ---
 
 - endByDate
-- string
+- `string`
 - The end date of the time span. Used if `recurrence` is set to `EndByDate`.
+
+---
+
+- endAfterOccurrences
+- `number`
+- The number of occurrences of the time span. Used if `recurrence` is set to `EndAfterOccurrences`.
 
 {% /table %}
 
@@ -157,25 +163,59 @@ These are objects representing a field value in a record. They will comprise the
 ---
 
 - fileId
-- number
+- `number`
 - The id of the file.
 
 ---
 
 - fileName
-- string
+- `string`
 - The name of the file.
 
 ---
 
 - notes
-- string
+- `string`
 - The notes for the attachment.
 
 ---
 
 - storageLocation
-- string
+- `string`
 - The storage location of the file. Can be one of the following values: `Internal`, `OneDrive`, `GoogleDrive`.
+
+{% /table %}
+
+### Scoring Group Value {% #scoring-group-value %}
+
+{% table .propertiesTable %}
+
+- Property Name
+- Data Type
+- Description
+
+---
+
+- listValueId
+- `string`
+- The id of the list value.
+
+---
+
+- name
+- `string`
+- The name of the scoring group.
+
+---
+
+- score
+- `number`
+- The score of the scoring group.
+
+---
+
+- maximumScore
+- `number`
+- The maximum score of the scoring group.
 
 {% /table %}

@@ -10,9 +10,10 @@ curl --location 'https://api.onspring.com/Records/appId/195' \
 ```csharp
 using Onspring.API.SDK;
 
-const string baseUrl = "https://api.onspring.com/";
-const string apiKey = "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000";
-var onspringClient = new OnspringClient(baseUrl, apiKey);
+var onspringClient = new OnspringClient(
+  config.BaseUrl,
+  config.ApiKey
+);
 
 var apps = await onspringClient.GetAppsAsync();
 foreach (App app in apps)

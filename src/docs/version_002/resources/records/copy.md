@@ -13,19 +13,19 @@ These are objects representing a content record in your instance. You can create
 ---
 
 - App Id
-- number
+- `number`
 - The id of the app or survey.
 
 ---
 
 - recordId
-- number
+- `number`
 - The id of the record.
 
 ---
 
 - fieldData
-- object[]
+- `object[]`
 - An array of [Field Value](#field-values) objects.
 
 {% /table %}
