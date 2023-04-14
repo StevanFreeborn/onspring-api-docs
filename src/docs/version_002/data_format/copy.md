@@ -12,7 +12,7 @@ The format values can be either `Raw` or `Formatted`. If the format is not speci
 
 ## Raw Format {% #raw-format %}
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Field Type
 - Return Data Type
@@ -60,7 +60,7 @@ The format values can be either `Raw` or `Formatted`. If the format is not speci
 
 ## Formatted Format {% #formatted-format %}
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Field Type
 - Return Data Type

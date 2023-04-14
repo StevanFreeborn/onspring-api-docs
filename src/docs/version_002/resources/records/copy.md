@@ -4,7 +4,7 @@ These are objects representing a content record in your instance. You can create
 
 ## Record Properties
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type

@@ -11,7 +11,7 @@ The Onspring API supports pagination for some endpoints for some resources. Pagi
 
 When making a request to one of the endpoints that support pagination you can use the following parameters to control the pagination behavior:
 
-{% table .propertiesTable %}
+{% table %}
 
 - Parameter Name
 - Data Type
@@ -35,7 +35,7 @@ When making a request to one of the endpoints that support pagination you can us
 
 When making a request to one of the endpoints that support pagination you will receive a response that contains a `Paged Collection` object that has the following properties which can be used to determine if there are more pages of data available and to retrieve the next page of data:
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type

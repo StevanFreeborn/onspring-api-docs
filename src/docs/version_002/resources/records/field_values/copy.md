@@ -4,7 +4,7 @@ These are objects representing a field value in a record. They will comprise the
 
 ## Field Value Properties
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type
@@ -32,7 +32,7 @@ These are objects representing a field value in a record. They will comprise the
 
 ### Field Value Types
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Type
 - Description
@@ -114,7 +114,7 @@ These are objects representing a field value in a record. They will comprise the
 
 ### Time Span Field Value {% #time-field-span-value %}
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type
@@ -154,7 +154,7 @@ These are objects representing a field value in a record. They will comprise the
 
 ### Attachment Field Value {% #attachment-field-value %}
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type
@@ -194,7 +194,7 @@ These are objects representing a field value in a record. They will comprise the
 
 ### Scoring Group Field Value {% #scoring-group-field-value %}
 
-{% table .propertiesTable %}
+{% table  %}
 
 - Property Name
 - Data Type
