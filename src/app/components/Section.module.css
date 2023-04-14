@@ -39,6 +39,11 @@
   border-radius: 5px;
 }
 
+.container>article>p>code,
+.container>article>table code {
+  padding: 0.1rem 0.5rem;
+}
+
 .container>article:nth-child(1)>h1 {
   color: #ee7203;
   font-size: 40px;

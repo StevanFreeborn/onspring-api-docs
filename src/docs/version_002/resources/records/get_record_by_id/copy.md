@@ -1,6 +1,6 @@
-# Get Records by App {% #get-records-by-app %}
+# Get Record by Id {% #get-record-by-id %}
 
-This endpoint returns a [paged](#pagination) collection of [records](#records) for a given app or survey.
+This endpoint returns a single [record](#records) based on the given record id.
 
 ## Path Parameters
 
@@ -14,13 +14,17 @@ This endpoint returns a [paged](#pagination) collection of [records](#records) f
 
 - appId
 - `number`
-- The id of the app or survey.
+- The id of the app or survey that the record belongs to.
+
+---
+
+- recordId
+- `number`
+- The id of the record.
 
 {% /table %}
 
 ## Query Parameters
-
-**Note:** [Pagination](#pagination) query parameters can be used to control the number of records returned.
 
 {% table %}
 

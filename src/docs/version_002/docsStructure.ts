@@ -9,35 +9,30 @@ export const versionTwo: DocsStructure = {
       folder: 'introduction',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
     },
     {
       title: 'Authentication',
       folder: 'authentication',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
     },
     {
       title: 'Data Format',
       folder: 'data_format',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
     },
     {
       title: 'Pagination',
       folder: 'pagination',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
     },
     {
       title: 'Error Handling',
       folder: 'error_handling',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
     },
     {
       title: 'Resources',
@@ -58,6 +53,12 @@ export const versionTwo: DocsStructure = {
             {
               title: 'Get Records by App',
               folder: 'get_records_by_app',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get Record by Id',
+              folder: 'get_record_by_id',
               copy: 'copy.md',
               example: 'example.md',
             },
