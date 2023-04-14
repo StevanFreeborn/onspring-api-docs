@@ -38,20 +38,19 @@ export const versionTwo: DocsStructure = {
       children: [
         {
           title: 'Records',
-          folder: 'resources/records',
+          folder: 'records',
           copy: 'copy.md',
           example: 'example.md',
           children: [
             {
               title: 'Field Values',
-              folder: 'resources/records/field_values',
+              folder: 'field_values',
               copy: 'copy.md',
               example: 'example.md',
             },
             {
               title: 'Get Records by App',
-              folder:
-                'resources/records/get_records_by_app',
+              folder: 'get_records_by_app',
               copy: 'copy.md',
               example: 'example.md',
             },

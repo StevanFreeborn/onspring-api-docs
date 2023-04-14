@@ -8,20 +8,23 @@ import { Doc, DocSection } from './../types/types';
 
 const DOCS_PATH = path.join(process.cwd(), 'src/docs');
 
-function getCopyPath(version: string, doc: Doc): string {
+function getCopyPath(
+  version: string,
+  doc: Doc,
+  docPath: string
+): string {
   if (doc.copy === undefined) {
     return '';
   }
 
-  return path.join(
-    DOCS_PATH,
-    version,
-    doc.folder,
-    doc.copy
-  );
+  return path.join(DOCS_PATH, version, docPath, doc.copy);
 }
 
-function getExamplePath(version: string, doc: Doc): string {
+function getExamplePath(
+  version: string,
+  doc: Doc,
+  docPath: string
+): string {
   if (doc.example === undefined) {
     return '';
   }
@@ -29,7 +32,7 @@ function getExamplePath(version: string, doc: Doc): string {
   return path.join(
     DOCS_PATH,
     version,
-    doc.folder,
+    docPath,
     doc.example
   );
 }
@@ -80,32 +83,48 @@ function parseMarkdown(sourcePath: string): ReactNode {
   return children;
 }
 
-function getCopyChild(version: string, doc: Doc) {
-  const copyPath = getCopyPath(version, doc);
+function getCopyChild(
+  version: string,
+  doc: Doc,
+  docPath: string
+) {
+  const copyPath = getCopyPath(version, doc, docPath);
   return parseMarkdown(copyPath);
 }
 
-function getExampleChild(version: string, doc: Doc) {
-  const examplePath = getExamplePath(version, doc);
+function getExampleChild(
+  version: string,
+  doc: Doc,
+  docPath: string
+) {
+  const examplePath = getExamplePath(version, doc, docPath);
   return parseMarkdown(examplePath);
 }
 
 export function loadSections(
   version: string,
   docs: Doc[],
-  sections: DocSection[] = []
+  sections: DocSection[] = [],
+  docPath: string = ''
 ): DocSection[] {
   for (const doc of docs) {
+    const sourcePath = path.join(docPath, doc.folder);
+
     if (doc.copy && doc.example) {
       sections.push({
         title: doc.title,
-        copy: getCopyChild(version, doc),
-        example: getExampleChild(version, doc),
+        copy: getCopyChild(version, doc, sourcePath),
+        example: getExampleChild(version, doc, sourcePath),
       });
     }
 
     if (doc.children && doc.children.length > 0) {
-      loadSections(version, doc.children, sections);
+      loadSections(
+        version,
+        doc.children,
+        sections,
+        sourcePath
+      );
     }
   }
 

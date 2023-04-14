@@ -42,7 +42,7 @@
     },
     {
       "type": "TimeSpan",
-      "fieldId": 4810,
+      "fieldId": 4810, // TimeSpan Field
       "value": {
         "quantity": 11,
         "increment": "Seconds",
