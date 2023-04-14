@@ -1,6 +1,6 @@
 # Authentication {% #authentication %}
 
-The Onpsring API uses API keys to authenticate requests. You can view and manage your API keys from within your instance.
+The Onpsring API uses API keys to authenticate requests. These keys are specific to a given Onspring instance. You can view and manage your API keys from within your instance.
 
 An API key needs to be provided with every request. This is done by adding the `X-ApiKey` header to the request. The API key provided should be in an `Enabled` status and it should be assigned a role that has the proper permissions for the request made by the API key. The role assigned should also be in an `Active` status.
 

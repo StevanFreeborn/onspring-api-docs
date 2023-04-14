@@ -36,7 +36,6 @@
 
 .container>article code {
   background-color: #0b3766;
-  padding: 0.1rem 0.5rem;
   border-radius: 5px;
 }
 
@@ -47,9 +46,13 @@
 }
 
 @media screen and (min-width: 1000px) {
-  .container>article:nth-child(2)>h1 {
+  .container>article:nth-child(2)>h1:nth-child(1) {
     padding-top: 75px;
   }
+}
+
+.container>article:nth-child(2)>h1:not(:first-child) {
+  margin-top: 1rem;
 }
 
 .container>article h2,

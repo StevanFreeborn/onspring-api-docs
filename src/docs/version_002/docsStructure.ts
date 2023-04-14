@@ -33,6 +33,13 @@ export const versionTwo: DocsStructure = {
       children: [],
     },
     {
+      title: 'Error Handling',
+      folder: 'error_handling',
+      copy: 'copy.md',
+      example: 'example.md',
+      children: [],
+    },
+    {
       title: 'Resources',
       folder: 'resources',
       children: [
