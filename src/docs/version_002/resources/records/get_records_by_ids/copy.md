@@ -14,7 +14,7 @@ This endpoint returns a batch of [records](#records) that match the given ids.
 
 - appId
 - `number`
-- The id of the app that contains the records.
+- The id of the app or survey that contains the records.
 
 ---
 

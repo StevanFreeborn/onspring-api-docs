@@ -34,6 +34,10 @@
   border-radius: 10px;
 }
 
+.snippetContent>pre::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 @-moz-document url-prefix() {
   .snippetContent>pre {
     margin-right: 1rem;

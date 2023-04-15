@@ -68,6 +68,12 @@ export const versionTwo: DocsStructure = {
               copy: 'copy.md',
               example: 'example.md',
             },
+            {
+              title: 'Get Records by Query',
+              folder: 'get_records_by_query',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
           ],
         },
       ],

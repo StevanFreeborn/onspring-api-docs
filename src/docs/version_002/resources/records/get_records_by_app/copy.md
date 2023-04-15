@@ -14,7 +14,7 @@ This endpoint returns a [paged](#pagination) collection of [records](#records) f
 
 - appId
 - `number`
-- The id of the app or survey.
+- The id of the app or survey that contains the records.
 
 {% /table %}
 

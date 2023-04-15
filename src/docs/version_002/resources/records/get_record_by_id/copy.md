@@ -14,7 +14,7 @@ This endpoint returns a single [record](#records) based on the given record id.
 
 - appId
 - `number`
-- The id of the app or survey that the record belongs to.
+- The id of the app or survey that contains the record.
 
 ---
 

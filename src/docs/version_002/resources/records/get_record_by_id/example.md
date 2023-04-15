@@ -1,6 +1,6 @@
 # Retrieving a record from an app
 
-{% code method="GET" heading="/Records/appId/{appID}/recordId/{recordID}" defaultLanguage="bash" %}
+{% code method="GET" heading="/Records/appId/{appId}/recordId/{recordId}" defaultLanguage="bash" %}
 
 ```bash
 curl --location 'https://api.onspring.com/Records/appId/195/recordId/1' \
