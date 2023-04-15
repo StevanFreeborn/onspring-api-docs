@@ -9,6 +9,7 @@ curl --location 'https://api.onspring.com/Records/appId/195/recordId/1' \
 
 ```csharp
 using Onspring.API.SDK;
+using Onspring.API.SDK.Models;
 
 var onspringClient = new OnspringClient(
   config.BaseUrl,

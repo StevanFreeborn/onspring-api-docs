@@ -15,10 +15,11 @@ var onspringClient = new OnspringClient(
   config.ApiKey
 );
 
-var apps = await onspringClient.GetAppsAsync();
-foreach (App app in apps)
+var response = await onspringClient.GetAppsAsync();
+
+foreach (var app in response.Value.Items)
 {
-    Console.WriteLine($"{app.Id}, {app.Name}");
+  Console.WriteLine($"{app.Id}, {app.Name}");
 }
 ```
 
