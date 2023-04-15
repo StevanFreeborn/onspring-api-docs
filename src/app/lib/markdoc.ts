@@ -61,6 +61,9 @@ const markDocConfig = {
         defaultLanguage: {
           type: 'string',
         },
+        method: {
+          type: 'string',
+        },
       },
     },
   },

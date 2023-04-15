@@ -1,6 +1,6 @@
 # Retrieving a batch of records
 
-{% code heading="POST /Records/batch-get" defaultLanguage="bash" %}
+{% code method="POST" heading="/Records/batch-get" defaultLanguage="bash" %}
 
 ```bash
 curl --location 'https://api.onspring.com/Records/batch-get' \

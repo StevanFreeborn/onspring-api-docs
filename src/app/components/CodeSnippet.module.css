@@ -121,3 +121,23 @@
   opacity: .2;
   margin-right: -1px;
 }
+
+.get {
+  color: #61affe;
+  font-weight: bold;
+}
+
+.post {
+  color: #49cc90;
+  font-weight: bold;
+}
+
+.put {
+  color: #fca130;
+  font-weight: bold;
+}
+
+.delete {
+  color: #f93e3e;
+  font-weight: bold;
+}

@@ -105,13 +105,22 @@ function SnippetLanguageDropdown({
 
 export default function CodeSnippet({
   children,
+  method,
   heading,
   defaultLanguage,
 }: {
   children: ReactNode;
+  method?: string;
   heading: string;
   defaultLanguage: string;
 }) {
+  const methodStyles: { [key: string]: string } = {
+    GET: styles.get,
+    POST: styles.post,
+    PUT: styles.put,
+    DELETE: styles.delete,
+  };
+
   const [selectedLanguage, setSelectedLanguage] =
     useState<string>(defaultLanguage);
 
@@ -137,7 +146,14 @@ export default function CodeSnippet({
   return (
     <div className={styles.snippetContainer}>
       <div className={styles.snippetHeader}>
-        <div>{heading}</div>
+        <div>
+          {method ? (
+            <span className={methodStyles[method]}>
+              {method}
+            </span>
+          ) : null}{' '}
+          {heading}
+        </div>
         <div className={styles.controlsContainer}>
           {snippetLanguages.length > 1 ? (
             <>
