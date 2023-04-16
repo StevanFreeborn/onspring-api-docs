@@ -14,7 +14,7 @@ This endpoint deletes multiple records by their ids. When successful, a `204` re
 
 - appId
 - `number`
-- The id that contains the records to delete.
+- The id of the app that contains the records to delete.
 
 ---
 
