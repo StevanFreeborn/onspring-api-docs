@@ -5,13 +5,12 @@
 ```bash
 curl --location 'https://api.onspring.com/Records/Query' \
 --header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000' \
---header 'x-api-version: 2' \
 --header 'Content-Type: application/json' \
 --data '{
-    "AppId": 195,
-    "Filter": "6983 eq '\''Test Task 5'\''",
-    "FieldIds": [6983,6986,6987,6985,6984],
-    "DataFormat": "Formatted"
+    "appId": 195,
+    "filter": "6983 eq '\''Test Task 5'\''",
+    "fieldIds": [6983,6986,6987,6985,6984],
+    "dataFormat": "Formatted"
 }'
 ```
 

@@ -5,13 +5,12 @@
 ```bash
 curl --location 'https://api.onspring.com/Records/batch-get' \
 --header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000' \
---header 'x-api-version: 2' \
 --header 'Content-Type: application/json' \
 --data '{
-  "AppId": 195,
-  "RecordIds": [1],
-  "FieldIds": [6983,6986,6987,6985,6984],
-  "DataFormat": "Raw"
+  "appId": 195,
+  "recordIds": [1],
+  "fieldIds": [6983,6986,6987,6985,6984],
+  "dataFormat": "Raw"
 }'
 ```
 
