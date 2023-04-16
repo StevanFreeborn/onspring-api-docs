@@ -39,6 +39,12 @@ export const versionTwo: DocsStructure = {
       folder: 'resources',
       children: [
         {
+          title: 'Connectivity',
+          folder: 'connectivity',
+          copy: 'copy.md',
+          example: 'example.md',
+        },
+        {
           title: 'Records',
           folder: 'records',
           copy: 'copy.md',
