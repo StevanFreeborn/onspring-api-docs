@@ -4,8 +4,7 @@
 
 ```bash
 curl --location --request DELETE 'https://api.onspring.com/Records/appId/195/recordId/140' \
---header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000' \
---data ''
+--header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000'
 ```
 
 ```csharp
