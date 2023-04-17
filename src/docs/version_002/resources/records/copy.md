@@ -12,7 +12,7 @@ These are objects representing a content record in your instance. You can create
 
 ---
 
-- App Id
+- appId
 - `number`
 - The id of the app or survey.
 

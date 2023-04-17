@@ -45,6 +45,32 @@ export const versionTwo: DocsStructure = {
           example: 'example.md',
         },
         {
+          title: 'Apps',
+          folder: 'apps',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [
+            {
+              title: 'Get Apps',
+              folder: 'get_apps',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get App by Id',
+              folder: 'get_app_by_id',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get Apps by Ids',
+              folder: 'get_apps_by_ids',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
+        },
+        {
           title: 'Records',
           folder: 'records',
           copy: 'copy.md',

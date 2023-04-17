@@ -15,25 +15,24 @@ var onspringClient = new OnspringClient(
   config.ApiKey
 );
 
-var response = await onspringClient.GetAppsAsync();
+var getReportsResponse = await onspringClient.GetReportsForAppAsync(195);
 
-foreach (var app in response.Value.Items)
+foreach (var report in getReportsResponse.Value.Items)
 {
-  Console.WriteLine($"{app.Id}, {app.Name}");
+    Console.WriteLine($"{report.Id}, {report.AppId}, {report.Name}");
 }
 ```
 
 ```javascript
+import {
+  GetRecordsByAppIdRequest,
+  OnspringClient,
+} from 'onspring-api-sdk';
 import dotenv from 'dotenv';
-import { OnspringClient } from 'onspring-api-sdk';
 dotenv.config();
 
-const client = new OnspringClient(
-  process.env.BASE_URL,
-  process.env.API_KEY
-);
-
-const res = await client.getApps();
+const request = new GetRecordsByAppIdRequest(195);
+const res = await client.getRecordsByAppId(request);
 const apps = res.data.items;
 
 for (const app of apps) {
