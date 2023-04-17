@@ -52,43 +52,43 @@ A filter expression is a string that is used to filter records returned by the [
 
 ---
 
-- `eq`
+- eq
 - Determines if the field equals a value.
 - `Text`, `number`, `date`, and `auto-number` fields and formula fields that have an output type of `text`, `number`, or `date`.
 
 ---
 
-- `ne`
+- ne
 - Determines if the field does not equal a value.
 - `Text`, `number`, `date`, and `auto-number` fields and formula fields that have an output type of `text`, `number`, or `date`.
 
 ---
 
-- `contains`
+- contains
 - Determines if the field contains a list value. List value can be its id or name.
 - `List` fields and formulas with output type of `list`.
 
 ---
 
-- `isnull`
+- isnull
 - Determines if the field is null.
 - `Text`, `number`, `date`, and `auto-number` fields and formula fields that have an output type of `text`, `number`, or `date`.
 
 ---
 
-- `notnull`
+- notnull
 - Determines if the field is not null.
 - `Text`, `number`, `date`, and `auto-number` fields and formula fields that have an output type of `text`, `number`, or `date`.
 
 ---
 
-- `lt`
+- lt
 - Determines if the field is less than a value.
 - `Number`, `date`, and `auto-number` fields and formula fields that have an output type of `number` or `date`.
 
 ---
 
-- `gt`
+- gt
 - Determines if the field is greater than a value.
 - `Number`, `date`, and `auto-number` fields and formula fields that have an output type of `number` or `date`.
 
