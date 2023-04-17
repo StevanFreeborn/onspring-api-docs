@@ -24,8 +24,8 @@ foreach (var app in response.Value.Items)
 ```
 
 ```javascript
-import dotenv from 'dotenv';
 import { OnspringClient } from 'onspring-api-sdk';
+import dotenv from 'dotenv';
 dotenv.config();
 
 const client = new OnspringClient(

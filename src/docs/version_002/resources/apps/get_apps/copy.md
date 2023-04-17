@@ -1,6 +1,6 @@
 # Get Apps {% #get-apps %}
 
-This endpoint returns a [paged](#pagination) collection of [apps](#apps) that the given API key has access to.
+This endpoint returns a [paged](#pagination) collection of [apps](#apps) that the given API key can access.
 
 ## Query Parameters
 
