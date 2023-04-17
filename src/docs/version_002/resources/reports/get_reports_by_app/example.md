@@ -65,3 +65,23 @@ for report in response.data.reports:
 ```
 
 {% /code %}
+
+{% code heading="RESPONSE" defaultLanguage="json" %}
+
+```json
+{
+  "pageNumber": 1,
+  "pageSize": 1,
+  "totalPages": 1,
+  "totalRecords": 1,
+  "items": [
+    {
+      "appId": 195,
+      "id": 613,
+      "name": "Test 1"
+    }
+  ]
+}
+```
+
+{% /code %}

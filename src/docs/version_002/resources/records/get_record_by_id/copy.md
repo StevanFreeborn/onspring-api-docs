@@ -42,6 +42,6 @@ This endpoint returns a single [record](#records) based on the given record id.
 
 - dataFormat
 - `string`
-- The [format](#data-format) of the field data in the response. Valid values are `raw` and `formatted`. If not specified, `raw` will be used.
+- The [format](#data-format) of the field data in the response. Valid values are `Raw` and `Formatted`. If not specified, `Raw` will be used.
 
 {% /table %}
