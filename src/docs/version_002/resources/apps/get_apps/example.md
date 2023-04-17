@@ -67,3 +67,23 @@ for app in response.data.apps:
 ```
 
 {% /code %}
+
+{% code heading="RESPONSE" defaultLanguage="json" %}
+
+```json
+{
+  "pageSize": 1,
+  "pageNumber": 1,
+  "totalPages": 1,
+  "totalRecords": 1,
+  "items": [
+    {
+      "id": 195,
+      "name": "Tasks",
+      "href": "https://api.onspring.com/Apps/195"
+    }
+  ]
+}
+```
+
+{% /code %}
