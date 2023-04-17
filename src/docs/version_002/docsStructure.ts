@@ -105,6 +105,13 @@ export const versionTwo: DocsStructure = {
           ],
         },
         {
+          title: 'Fields',
+          folder: 'fields',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [],
+        },
+        {
           title: 'Records',
           folder: 'records',
           copy: 'copy.md',
