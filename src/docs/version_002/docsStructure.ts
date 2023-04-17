@@ -109,7 +109,34 @@ export const versionTwo: DocsStructure = {
           folder: 'fields',
           copy: 'copy.md',
           example: 'example.md',
-          children: [],
+          children: [
+            {
+              title: 'Formula Field',
+              folder: 'formula_field',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Reference Field',
+              folder: 'reference_field',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'List Field',
+              folder: 'list_field',
+              copy: 'copy.md',
+              example: 'example.md',
+              children: [
+                {
+                  title: 'List Value',
+                  folder: 'list_value',
+                  copy: 'copy.md',
+                  example: 'example.md',
+                },
+              ],
+            },
+          ],
         },
         {
           title: 'Records',
