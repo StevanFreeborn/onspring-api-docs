@@ -19,7 +19,7 @@ var response = await onspringClient.GetFieldsForAppAsync(195);
 
 foreach (var field in response.Value.Items)
 {
-  Console.WriteLine($"{field.Id}, {field.AppId}, {field.Name}, {field.Type}, {field.Status}, {field.IsRequired}, {field.IsUnique}");
+  Console.WriteLine($"{field.Id}");
 }
 ```
 
