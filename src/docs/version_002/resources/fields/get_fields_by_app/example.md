@@ -15,8 +15,9 @@ var onspringClient = new OnspringClient(
   config.ApiKey
 );
 
-var getFieldsResponse = await onspringClient.GetFieldsForAppAsync(195);
-foreach (Field field in getFieldsResponse.Value.Items)
+var response = await onspringClient.GetFieldsForAppAsync(195);
+
+foreach (var field in response.Value.Items)
 {
   Console.WriteLine($"{field.Id}, {field.AppId}, {field.Name}, {field.Type}, {field.Status}, {field.IsRequired}, {field.IsUnique}");
 }
@@ -51,7 +52,6 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-
 response = client.GetFieldsByAppId(appId=195)
 
 print(f'Status Code: {response.statusCode}')
