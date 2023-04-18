@@ -127,14 +127,6 @@ export const versionTwo: DocsStructure = {
               folder: 'list_field',
               copy: 'copy.md',
               example: 'example.md',
-              children: [
-                {
-                  title: 'List Value',
-                  folder: 'list_value',
-                  copy: 'copy.md',
-                  example: 'example.md',
-                },
-              ],
             },
             {
               title: 'Get Fields by App',
@@ -151,6 +143,26 @@ export const versionTwo: DocsStructure = {
             {
               title: 'Get Fields by Ids',
               folder: 'get_fields_by_ids',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
+        },
+        {
+          title: 'List Values',
+          folder: 'list_values',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [
+            {
+              title: 'Save List Value',
+              folder: 'save_list_value',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Delete List Value by Id',
+              folder: 'delete_list_value_by_id',
               copy: 'copy.md',
               example: 'example.md',
             },

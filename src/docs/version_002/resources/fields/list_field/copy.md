@@ -26,6 +26,6 @@ List fields are a special type of field that allow you to define a list of value
 
 - values
 - `object[]`
-- An array of [List Value](#list-value) objects that define the possible values of the list field.
+- An array of [List Value](#list-values) objects that define the possible values of the list field.
 
 -

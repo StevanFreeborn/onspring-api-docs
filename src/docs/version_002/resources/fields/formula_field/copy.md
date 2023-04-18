@@ -20,6 +20,6 @@ Formula fields are a special type of field that can be used to calculate values 
 
 - values
 - `object[]`
-- An array of [List Value](#list-value) objects that define the possible values of the formula field. This array will only be populated with values if the `outputType` is set to `ListValue`.
+- An array of [List Value](#list-values) objects that define the possible values of the formula field. This array will only be populated with values if the `outputType` is set to `ListValue`.
 
 {% /table %}

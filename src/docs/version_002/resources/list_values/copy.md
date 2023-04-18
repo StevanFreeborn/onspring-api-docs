@@ -1,4 +1,4 @@
-# List Value {% #list-value %}
+# List Values {% #list-values %}
 
 These are objects that represent the defined values of a [List Field](#list-field) or a [Formula Field](#formula-field) with a `ListValue` output type.
 
