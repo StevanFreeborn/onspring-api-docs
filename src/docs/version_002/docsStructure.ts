@@ -224,6 +224,38 @@ export const versionTwo: DocsStructure = {
             },
           ],
         },
+        {
+          title: 'Files',
+          folder: 'files',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [
+            {
+              title: 'Get File Info by Id',
+              folder: 'get_file_info_by_id',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get File by Id',
+              folder: 'get_file_by_id',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Add File',
+              folder: 'add_file',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Delete File by Id',
+              folder: 'delete_file_by_id',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
+        },
       ],
     },
   ],
