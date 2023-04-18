@@ -1,6 +1,6 @@
 # Get Records by Ids {% #get-records-by-ids %}
 
-This endpoint returns a batch of [records](#records) that match the given ids.
+This endpoint returns a batch of [records](#records) that match the given ids. The max number of records that can be requested is 100.
 
 ## Request Body Properties
 

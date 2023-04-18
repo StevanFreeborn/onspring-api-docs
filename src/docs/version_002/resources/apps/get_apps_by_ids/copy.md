@@ -1,6 +1,6 @@
 # Get Apps by Ids {% #get-apps-by-ids %}
 
-This endpoint returns a batch of [apps](#apps) based on the given app ids.
+This endpoint returns a batch of [apps](#apps) based on the given app ids. The max number of apps that can be requested is 100.
 
 ## Request Body
 

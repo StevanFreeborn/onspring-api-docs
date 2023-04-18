@@ -1,6 +1,6 @@
 # Get Fields by App {% #get-fields-by-app %}
 
-This endpoint returns a [paged](#pagination) collection of [fields](#fields) for the given app.
+This endpoint returns a [paged](#pagination) collection of [Fields](#fields) for the given app.
 
 ## Path Parameters
 
