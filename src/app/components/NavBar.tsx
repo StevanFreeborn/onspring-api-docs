@@ -5,7 +5,11 @@ import { useState } from 'react';
 import { DocsStructure } from '../types/types.js';
 import styles from './NavBar.module.css';
 
-function NavbarDropdown({ version }: { version: string }) {
+function VersionsDropdown({
+  version,
+}: {
+  version: string;
+}) {
   const versions = {
     version_001: {
       name: 'Version 1',
@@ -98,7 +102,7 @@ export default function NavBar({
     <nav className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <NavbarDropdown version={version.version} />
+          <VersionsDropdown version={version.version} />
         </li>
         <li className={styles.navItem}>
           {version.hasSwagger ? (
