@@ -136,6 +136,24 @@ export const versionTwo: DocsStructure = {
                 },
               ],
             },
+            {
+              title: 'Get Fields by App',
+              folder: 'get_fields_by_app',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get Field by Id',
+              folder: 'get_field_by_id',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get Fields by Ids',
+              folder: 'get_fields_by_ids',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
           ],
         },
         {

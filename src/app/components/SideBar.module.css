@@ -4,6 +4,21 @@
   height: 100%;
   border-right: 1px solid #848586;
   padding: 1rem;
+  overflow: auto;
+  scrollbar-color: transparent #0b3766;
+}
+
+.container::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.container:hover::-webkit-scrollbar-thumb {
+  background-color: #0b3766;
 }
 
 .link {

@@ -6,6 +6,24 @@
   align-items: center;
   margin: 0 auto;
   overflow-y: auto;
+  scrollbar-color: transparent #0b3766;
+}
+
+.container::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.container:hover::-webkit-scrollbar-thumb {
+  background-color: #0b3766;
+}
+
+.container:hover::-webkit-scrollbar {
+  background-color: #043160;
 }
 
 .divider {
