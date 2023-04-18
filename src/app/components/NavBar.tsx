@@ -93,6 +93,10 @@ function VersionsDropdown({
   );
 }
 
+function SectionDropdown({ section }: { section: string }) {
+  return <></>;
+}
+
 export default function NavBar({
   version,
 }: {
