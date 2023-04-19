@@ -11,7 +11,6 @@ curl --location --request PUT 'https://api.onspring.com/Lists/id/906/items' \
   "name": "Not Started",
   "numericValue": 0,
   "color": "#ffffff",
-  "weight": 0
 }'
 ```
 
