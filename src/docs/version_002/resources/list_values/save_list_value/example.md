@@ -14,6 +14,81 @@ curl --location --request PUT 'https://api.onspring.com/Lists/id/906/items' \
 }'
 ```
 
+```csharp
+using Onspring.API.SDK;
+using Onspring.API.SDK.Models;
+
+var onspringClient = new OnspringClient(
+  config.BaseUrl,
+  config.ApiKey
+);
+
+var response = await onspringClient.SaveListItemAsync(
+  new SaveListItemRequest
+  {
+    ListId = 906,
+    Id = null,
+    Name = "Not Started",
+    NumericValue = 0,
+    Color = "#ffffff",
+  }
+);
+
+Console.WriteLine(response.Value.Id);
+```
+
+```javascript
+import {
+  OnspringClient,
+  ListItemRequest,
+} from 'onspring-api-sdk';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const client = new OnspringClient(
+  process.env.BASE_URL,
+  process.env.API_KEY
+);
+
+const request = new ListItemRequest(
+  906,
+  null,
+  'Not Started',
+  0,
+  '#ffffff'
+);
+const res = await client.addOrUpdateListItem(request);
+const itemId = res.data.id;
+
+console.log(itemId);
+```
+
+```python
+from OnspringApiSdk.OnspringClient import OnspringClient
+from OnspringApiSdk.Models import ListItemRequest
+from configparser import ConfigParser
+
+cfg = ConfigParser()
+cfg.read('config.ini')
+
+key = cfg['prod']['key']
+url = cfg['prod']['url']
+
+client = OnspringClient(url, key)
+request = ListItemRequest(
+  listId=906,
+  name='Not Started',
+  id='',
+  numericValue=0,
+  color='#ffffff'
+)
+
+response = client.AddOrUpdateListItem(request)
+
+print(f'Status Code: {response.statusCode}')
+print(f'Id: {response.data.id}')
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}
