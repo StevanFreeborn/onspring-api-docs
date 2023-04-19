@@ -24,7 +24,10 @@ function TreeNode({ doc }: { doc: Doc }) {
           >
             {doc.title}
           </a>
-          <div onClick={() => setIsExpanded(!isExpanded)}>
+          <div
+            className={styles.chevronContainer}
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
             {isExpanded ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

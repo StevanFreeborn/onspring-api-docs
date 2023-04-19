@@ -8,6 +8,12 @@
   scrollbar-color: transparent #0b3766;
 }
 
+@media screen and (max-width: 1000px) {
+  .container {
+    display: none;
+  }
+}
+
 .container::-webkit-scrollbar {
   background-color: transparent;
 }
@@ -19,6 +25,10 @@
 
 .container:hover::-webkit-scrollbar-thumb {
   background-color: #0b3766;
+}
+
+.container::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 .link {
@@ -80,6 +90,12 @@
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
+  flex: 1 1 auto;
+}
+
+.chevronContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .chevron {
