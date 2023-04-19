@@ -78,7 +78,7 @@ client = OnspringClient(url, key)
 request = ListItemRequest(
   listId=906,
   name='Not Started',
-  id='',
+  id=None,
   numericValue=0,
   color='#ffffff'
 )
