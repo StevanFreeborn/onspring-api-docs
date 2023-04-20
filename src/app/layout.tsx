@@ -7,7 +7,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: 'docs/images/favicon.ico',
+        url: '/images/favicon.ico',
         type: 'image/x-icon',
       },
     ],
