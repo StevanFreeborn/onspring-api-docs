@@ -1,6 +1,8 @@
 # Add File {% #add-file %}
 
-This endpoint allows you to add a file to a record. The request body must be a multipart form data request.
+This endpoint allows you to add a file to a record. The request body must be of type `multipart/form-data`.
+
+{% table %}
 
 ## Request Body Properties
 
