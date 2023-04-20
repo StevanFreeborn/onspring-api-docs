@@ -153,38 +153,61 @@ export default function NavBar({
 }: {
   version: DocsStructure;
 }) {
+  const [isNavOpen, setIsNavOpen] =
+    useState<boolean>(false);
+
+  const handleNavToggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <nav className={styles.nav}>
-      <ul className={styles.navList}>
+      <ul className={styles.navListLeft}>
         <li className={styles.sectionDropdown}>
           <SectionDropdown version={version} />
         </li>
       </ul>
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <VersionsDropdown version={version.version} />
-        </li>
-        <li className={styles.navItem}>
-          {version.hasSwagger ? (
+      <div>
+        <div
+          onClick={handleNavToggle}
+          className={styles.navbarToggle}
+        >
+          <div className={styles.navbarToggleLine}></div>
+          <div className={styles.navbarToggleLine}></div>
+          <div className={styles.navbarToggleLine}></div>
+        </div>
+        <ul
+          className={
+            isNavOpen
+              ? `${styles.navListRight} ${styles.navListRightOpen}`
+              : styles.navListRight
+          }
+        >
+          <li className={styles.navItem}>
+            <VersionsDropdown version={version.version} />
+          </li>
+          <li className={styles.navItem}>
+            {version.hasSwagger ? (
+              <Link
+                href="https://api.onspring.com/swagger"
+                className={styles.navLink}
+                target="_blank"
+              >
+                Swagger
+              </Link>
+            ) : null}
+          </li>
+          <li className={styles.navItem}>
             <Link
-              href="https://api.onspring.com/swagger"
+              href="https://onspring.com/customer-service/admin-support/"
               className={styles.navLink}
               target="_blank"
             >
-              Swagger
+              Support
             </Link>
-          ) : null}
-        </li>
-        <li className={styles.navItem}>
-          <Link
-            href="https://onspring.com/customer-service/admin-support/"
-            className={styles.navLink}
-            target="_blank"
-          >
-            Support
-          </Link>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
