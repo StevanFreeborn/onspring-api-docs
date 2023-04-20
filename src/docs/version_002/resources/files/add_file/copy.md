@@ -2,8 +2,6 @@
 
 This endpoint allows you to add a file to a record. The request body must be of type `multipart/form-data`.
 
-{% table %}
-
 ## Request Body Properties
 
 {% table %}
