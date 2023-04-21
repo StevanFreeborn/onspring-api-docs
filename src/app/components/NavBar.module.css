@@ -76,7 +76,7 @@
 
 .dropdownSelect {
   color: #64adac;
-  background-color: #05254a;
+  background-color: inherit;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -90,7 +90,6 @@
 }
 
 .selectItem {
-  background-color: #05254a;
   color: #64adac;
   cursor: pointer;
   font-weight: bold;

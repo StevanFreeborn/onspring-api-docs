@@ -97,7 +97,7 @@ export default function SideBar({
 
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.titleContainer}>
         <Link href="/" className={styles.link}>
           <h1 className={styles.title}>
             <span className={styles.onspring}>
@@ -106,14 +106,17 @@ export default function SideBar({
             <span className={styles.api}>API</span>
           </h1>
         </Link>
-        <label className="switch">
+        <label className={styles.switch}>
           <input
+            title="Toggle dark mode"
             onChange={() =>
               setTheme(theme === 'light' ? 'dark' : 'light')
             }
             type="checkbox"
           />
-          <span className="slider round"></span>
+          <span
+            className={`${styles.slider} ${styles.round}`}
+          ></span>
         </label>
       </div>
       <ListTree docs={version.docs} />

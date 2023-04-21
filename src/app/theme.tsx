@@ -7,8 +7,6 @@ import {
   useState,
 } from 'react';
 
-const ThemeContext = createContext({});
-
 const darkTheme = {
   color: 'white',
   backgroundColor: '#05254a',
@@ -19,17 +17,14 @@ const lightTheme = {
   backgroundColor: 'white',
 };
 
-export const themes = {
-  dark: darkTheme,
-  light: lightTheme,
-} as { [key: string]: { [key: string]: string } };
+const ThemeContext = createContext({});
 
 export const ThemeContextProvider = ({
   children,
 }: {
   children: ReactNode;
 }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -37,6 +32,11 @@ export const ThemeContextProvider = ({
     </ThemeContext.Provider>
   );
 };
+
+export const themes = {
+  dark: darkTheme,
+  light: lightTheme,
+} as { [key: string]: { [key: string]: string } };
 
 export const useThemeContext: any = () =>
   useContext(ThemeContext);
