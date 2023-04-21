@@ -2,6 +2,7 @@ import { default as Markdoc } from '@markdoc/markdoc';
 import fs from 'fs';
 import path from 'path';
 import React, { ReactNode } from 'react';
+import Clients from '../components/Clients';
 import CodeSnippet from '../components/CodeSnippet';
 import Fence from '../components/Fence';
 import { Doc, DocSection } from './../types/types';
@@ -66,6 +67,14 @@ const markDocConfig = {
         },
       },
     },
+    clients: {
+      render: 'Clients',
+      attributes: {
+        version: {
+          type: 'string',
+        },
+      },
+    },
   },
 };
 
@@ -80,6 +89,7 @@ function parseMarkdown(sourcePath: string): ReactNode {
     components: {
       CodeSnippet: CodeSnippet,
       Fence: Fence,
+      Clients: Clients,
     },
   });
 

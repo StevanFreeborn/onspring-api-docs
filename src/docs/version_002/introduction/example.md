@@ -17,3 +17,6 @@ X-Api-Version: 2
 ```
 
 {% /code %}
+
+{% clients version="2" %}
+{% /clients %}
