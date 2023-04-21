@@ -20,12 +20,17 @@
   padding: 1rem;
 }
 
-.clientContainer {
+.clientContainer,
+.selectedClientContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   font-size: 0.8rem;
+}
+
+.selectedClientContainer {
+  border-bottom: 2px solid #0b3766;
 }
 
 .official {

@@ -102,7 +102,13 @@ export default function Clients({
             key={client.name}
             className={styles.client}
           >
-            <div className={styles.clientContainer}>
+            <div
+              className={
+                selectedClient.name === client.name
+                  ? styles.selectedClientContainer
+                  : styles.clientContainer
+              }
+            >
               <div
                 className={styles.clientSvg}
                 dangerouslySetInnerHTML={{
