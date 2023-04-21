@@ -6,6 +6,7 @@
   padding: 0 1rem;
   overflow: auto;
   background-color: inherit;
+  width: 300px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -16,6 +17,7 @@
 
 .link {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .titleContainer {

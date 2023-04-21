@@ -1,0 +1,7 @@
+# Relationships {% #relationships %}
+
+Reference fields in Onspring are used to relate records to one another whether they be in the same app or in different apps. They can be used to create a one-to-one relationship, a one-to-many relationship, or a many-to-many relationship. This functionality is at the core of how people build and utilize the Onspring platform.
+
+That being said it is likely that when you are working with data in Onspring you will need to work with data that crosses apps. For example you can have a **Groups** app that has a list of all the groups in your instance and then you can have a **Users** app that has a list of all the users in your instance. Many users can be related to a single group using a reference field. Therefore if you wanted to collect data for all the users in a group you could make use of the Onspring API to programmatically resolve the relationships between a group record and its related user records and then retrieve the data for each of those users.
+
+You would need to first retrieve the group [record](#records) which will contain the [reference field value](#field-values) that holds all the references to the users in that group. Note the values in a reference field will be the internal [Record Id](#record-id) value for each of the related records. You would then need to confirm which app the [reference field](#reference-field) is targeting and then retrieve the user data for each of the users in the group using the user's [Record Id](#record-id) and the **Users** app id.

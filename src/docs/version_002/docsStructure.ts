@@ -35,8 +35,8 @@ export const versionTwo: DocsStructure = {
       example: 'example.md',
     },
     {
-      title: 'Reference Field',
-      folder: 'reference_field',
+      title: 'Relationships',
+      folder: 'relationships',
       copy: 'copy.md',
       example: 'example.md',
     },
