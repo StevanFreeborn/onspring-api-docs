@@ -113,6 +113,7 @@ export default function SideBar({
               setTheme(theme === 'light' ? 'dark' : 'light')
             }
             type="checkbox"
+            checked={theme === 'dark'}
           />
           <span
             className={`${styles.slider} ${styles.round}`}
