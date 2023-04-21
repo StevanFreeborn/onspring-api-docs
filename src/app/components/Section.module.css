@@ -31,10 +31,10 @@
 
 .container>article>p {
   margin-top: 20px;
-  color: #c1c9d2;
 }
 
 .container>article code {
+  color: white;
   background-color: #0b3766;
   border-radius: 5px;
 }

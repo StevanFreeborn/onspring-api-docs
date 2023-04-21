@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import './globals.css';
+import { ThemeContextProvider } from './theme';
 
 export const metadata = {
   title: 'Onspring API Docs',
@@ -12,6 +13,11 @@ export const metadata = {
       },
     ],
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeContextProvider>
+          {children}
+        </ThemeContextProvider>
+      </body>
     </html>
   );
 }

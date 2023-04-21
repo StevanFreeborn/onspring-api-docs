@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link.js';
+import Link from 'next/link';
 import { Fragment, useState } from 'react';
-import { Doc, DocsStructure } from '../types/types.js';
+import { themes, useThemeContext } from '../theme';
+import { Doc, DocsStructure } from '../types/types';
 import styles from './NavBar.module.css';
 
 function VersionsDropdown({
@@ -153,6 +154,9 @@ export default function NavBar({
 }: {
   version: DocsStructure;
 }) {
+  const { theme } = useThemeContext();
+  const themeStyles = themes[theme];
+
   const [isNavOpen, setIsNavOpen] =
     useState<boolean>(false);
 
@@ -161,7 +165,7 @@ export default function NavBar({
   };
 
   return (
-    <nav className={styles.nav}>
+    <nav style={themeStyles} className={styles.nav}>
       <ul className={styles.navListLeft}>
         <li className={styles.sectionDropdown}>
           <SectionDropdown version={version} />

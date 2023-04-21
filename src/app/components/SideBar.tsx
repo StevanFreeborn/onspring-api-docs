@@ -2,6 +2,7 @@
 
 import Link from 'next/link.js';
 import { useState } from 'react';
+import { useThemeContext } from '../theme';
 import { Doc, DocsStructure } from '../types/types.js';
 import styles from './SideBar.module.css';
 
@@ -92,14 +93,29 @@ export default function SideBar({
 }: {
   version: DocsStructure;
 }) {
+  const { theme, setTheme } = useThemeContext();
+
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.link}>
-        <h1 className={styles.title}>
-          <span className={styles.onspring}>Onspring</span>{' '}
-          <span className={styles.api}>API</span>
-        </h1>
-      </Link>
+      <div>
+        <Link href="/" className={styles.link}>
+          <h1 className={styles.title}>
+            <span className={styles.onspring}>
+              Onspring
+            </span>{' '}
+            <span className={styles.api}>API</span>
+          </h1>
+        </Link>
+        <label className="switch">
+          <input
+            onChange={() =>
+              setTheme(theme === 'light' ? 'dark' : 'light')
+            }
+            type="checkbox"
+          />
+          <span className="slider round"></span>
+        </label>
+      </div>
       <ListTree docs={version.docs} />
     </div>
   );

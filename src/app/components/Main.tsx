@@ -1,4 +1,7 @@
+'use client';
+
 import { Fragment } from 'react';
+import { themes, useThemeContext } from '../theme';
 import { DocSection } from '../types/types';
 import styles from './Main.module.css';
 import Section from './Section';
@@ -8,8 +11,11 @@ export default function Main({
 }: {
   versionSections: DocSection[];
 }) {
+  const { theme } = useThemeContext();
+  const themeStyles = themes[theme];
+
   return (
-    <main className={styles.container}>
+    <main style={themeStyles} className={styles.container}>
       {versionSections.map(section => (
         <Fragment key={section.title}>
           <Section key={section.title}>
