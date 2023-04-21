@@ -1,11 +1,13 @@
 .nav {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   width: 100%;
-  max-width: 1450px;
   margin: 0 auto;
+  z-index: 100;
 }
 
 .navListRight,
