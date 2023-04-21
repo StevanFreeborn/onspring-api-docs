@@ -23,6 +23,24 @@ export const versionTwo: DocsStructure = {
       example: 'example.md',
     },
     {
+      title: 'Dates',
+      folder: 'dates',
+      copy: 'copy.md',
+      example: 'example.md',
+    },
+    {
+      title: 'Record Id',
+      folder: 'record_id',
+      copy: 'copy.md',
+      example: 'example.md',
+    },
+    {
+      title: 'Reference Field',
+      folder: 'reference_field',
+      copy: 'copy.md',
+      example: 'example.md',
+    },
+    {
       title: 'Pagination',
       folder: 'pagination',
       copy: 'copy.md',
