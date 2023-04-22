@@ -1,6 +1,6 @@
 # Retrieving and sending date field values
 
-{% code heading="Date Field Value" defaultLanguage="json" %}
+{% code heading="DATE FIELD VALUE" defaultLanguage="json" %}
 
 ```json
 {
@@ -14,7 +14,7 @@
 
 **Note:** The format of the date field value will be impacted based on the [data format](#data-format) sent in the request to retrieve it.
 
-{% code heading="Value for Date Field" defaultLanguage="json" %}
+{% code heading="VALUE FOR DATE FIELD" defaultLanguage="json" %}
 
 ```json
 {
