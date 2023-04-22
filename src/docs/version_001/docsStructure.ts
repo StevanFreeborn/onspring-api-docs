@@ -34,5 +34,11 @@ export const versionOne: DocsStructure = {
       copy: 'copy.md',
       example: 'example.md',
     },
+    {
+      title: 'Error Handling',
+      folder: 'error_handling',
+      copy: 'copy.md',
+      example: 'example.md',
+    },
   ],
 };
