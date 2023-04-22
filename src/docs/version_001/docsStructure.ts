@@ -9,7 +9,12 @@ export const versionOne: DocsStructure = {
       folder: 'introduction',
       copy: 'copy.md',
       example: 'example.md',
-      children: [],
+    },
+    {
+      title: 'Authentication',
+      folder: 'authentication',
+      copy: 'copy.md',
+      example: 'example.md',
     },
   ],
 };
