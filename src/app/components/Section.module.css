@@ -7,7 +7,7 @@
   max-width: 1450px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -24,7 +24,7 @@
   max-width: 600px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .container>article {
     position: sticky;
     top: 5rem;
@@ -52,7 +52,7 @@
   font-weight: bold;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .container>article:nth-child(2)>h1:nth-child(1) {
     padding-top: 75px;
   }
