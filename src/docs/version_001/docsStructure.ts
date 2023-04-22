@@ -16,5 +16,11 @@ export const versionOne: DocsStructure = {
       copy: 'copy.md',
       example: 'example.md',
     },
+    {
+      title: 'Data Format',
+      folder: 'data_format',
+      copy: 'copy.md',
+      example: 'example.md',
+    },
   ],
 };
