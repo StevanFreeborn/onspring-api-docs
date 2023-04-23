@@ -95,6 +95,12 @@ export const versionOne: DocsStructure = {
               copy: 'copy.md',
               example: 'example.md',
             },
+            {
+              title: 'List Values',
+              folder: 'list_values',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
           ],
         },
       ],
