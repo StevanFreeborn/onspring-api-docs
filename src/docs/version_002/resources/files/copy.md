@@ -1,6 +1,6 @@
 # Files {% #files %}
 
-Files represent the information held in `Attachment` and `Image` fields. The Onspring API can be used to retrieve the information about files and to the files themselves. The Onspring API can also be used to add and remove files to and from `Attachment` and `Image` fields.
+Files represent the information held in `Attachment` and `Image` fields. The Onspring API can be used to retrieve the information a file and the file themselves. The Onspring API can also be used to add and remove files to and from `Attachment` and `Image` fields.
 
 ## File Information Properties {% #file-information-properties %}
 
