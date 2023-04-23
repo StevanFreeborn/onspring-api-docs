@@ -103,6 +103,12 @@ export const versionOne: DocsStructure = {
             },
           ],
         },
+        {
+          title: 'Records',
+          folder: 'records',
+          copy: 'copy.md',
+          example: 'example.md',
+        },
       ],
     },
   ],
