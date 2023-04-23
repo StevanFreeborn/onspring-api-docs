@@ -50,6 +50,13 @@ export const versionOne: DocsStructure = {
           copy: 'copy.md',
           example: 'example.md',
         },
+        {
+          title: 'Apps',
+          folder: 'apps',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [],
+        },
       ],
     },
   ],
