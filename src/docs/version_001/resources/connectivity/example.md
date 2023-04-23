@@ -19,7 +19,6 @@ if (httpHelper.CanConnect())
 {
   Console.WriteLine("Connected to Onspring API");
 }
-
 ```
 
 {% /code %}
