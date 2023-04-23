@@ -28,4 +28,4 @@ List fields are a special type of field that allow you to define a list of value
 - `object[]`
 - An array of [List Value](#list-values) objects that define the possible values of the list field.
 
--
+{% /table %}
