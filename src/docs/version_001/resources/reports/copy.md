@@ -12,19 +12,19 @@ These are objects that represent reports and their data for apps and surveys in 
 
 ---
 
-- appId
+- AppId
 - `number`
 - The id of the app or survey that the report belongs to.
 
 ---
 
-- id
+- Id
 - `number`
 - The id of the report.
 
 ---
 
-- name
+- Name
 - `string`
 - The name of the report.
 

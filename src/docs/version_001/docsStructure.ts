@@ -57,6 +57,34 @@ export const versionOne: DocsStructure = {
           example: 'example.md',
           children: [],
         },
+        {
+          title: 'Reports',
+          folder: 'reports',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [
+            {
+              title: 'Report Data',
+              folder: 'report_data',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
+        },
+        {
+          title: 'Fields',
+          folder: 'fields',
+          copy: 'copy.md',
+          example: 'example.md',
+          children: [
+            {
+              title: 'Formula Field',
+              folder: 'formula_field',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
+        },
       ],
     },
   ],
