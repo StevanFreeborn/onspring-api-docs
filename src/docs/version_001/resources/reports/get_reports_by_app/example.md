@@ -15,7 +15,7 @@ var httpHelper = new HttpHelper(
   config.apiKey
 );
 
-foreach (var report in httpHelper.GetAppReports(5))
+foreach (var report in httpHelper.GetAppReports(195))
 {
   Console.WriteLine($"{report.Id}, {report.AppId}, {report.Name}");
 }
