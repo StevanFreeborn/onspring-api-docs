@@ -6,7 +6,7 @@ When retrieving data for [reports](#reports) via the Onspring API using certain 
 
 The format values can be either `Raw` or `Formatted`. If the format is not specified then the default format is `Raw`. The format specified will be applied to all the data being retrieved. The impact of the format on the data retrieve will depend on the type of field. The following tables shows the impact of the format on the data retrieved for each field type.
 
-## Raw Format
+## Raw Format {% #raw-format %}
 
 {% table  %}
 
@@ -90,7 +90,7 @@ The format values can be either `Raw` or `Formatted`. If the format is not speci
 
 {% /table %}
 
-## Formatted Format
+## Formatted Format {% #formatted-format %}
 
 {% table  %}
 

@@ -4,7 +4,7 @@
 
 ```json
 {
-  "columns": [
+  "Columns": [
     "attachment_field",
     "Record Id",
     "Created Date",
@@ -18,7 +18,7 @@
     "multi_line_text_field",
     "time_span_field_with_recurrence"
   ],
-  "rows": [
+  "Rows": [
     [
       "test-attachment.txt|odin-project-timestamps.txt|test-attachment.txt|test-attachment.txt|test-attachment.txt|test-attachment.txt|test-attachment.txt|test-attachment.txt|test-attachment.txt",
       1,
@@ -45,7 +45,7 @@
 
 ```json
 {
-  "columns": [
+  "Columns": [
     "attachment_field",
     "Record Id",
     "Created Date",
@@ -59,7 +59,7 @@
     "multi_line_text_field",
     "time_span_field_with_recurrence"
   ],
-  "rows": [
+  "Rows": [
     [
       "test-attachment.txt\r\nodin-project-timestamps.txt\r\ntest-attachment.txt\r\ntest-attachment.txt\r\ntest-attachment.txt\r\ntest-attachment.txt\r\ntest-attachment.txt\r\ntest-attachment.txt\r\ntest-attachment.txt",
       "recordId-1",

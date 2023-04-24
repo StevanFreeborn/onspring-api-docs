@@ -17,12 +17,6 @@ export const versionOne: DocsStructure = {
       example: 'example.md',
     },
     {
-      title: 'Data Format',
-      folder: 'data_format',
-      copy: 'copy.md',
-      example: 'example.md',
-    },
-    {
       title: 'Dates',
       folder: 'dates',
       copy: 'copy.md',
@@ -73,6 +67,12 @@ export const versionOne: DocsStructure = {
             {
               title: 'Report Data',
               folder: 'report_data',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Report Data Format',
+              folder: 'report_data_format',
               copy: 'copy.md',
               example: 'example.md',
             },
@@ -143,6 +143,12 @@ export const versionOne: DocsStructure = {
             {
               title: 'Field Values',
               folder: 'field_values',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Record Data Format',
+              folder: 'record_data_format',
               copy: 'copy.md',
               example: 'example.md',
             },
