@@ -6,7 +6,6 @@ When retrieving data for [records](#records) via the Onspring API using certain 
 - [Get Record by Id](#get-record-by-id)
 - [Get Records by Ids](#get-records-by-ids)
 - [Get Records by Query](#get-records-by-query)
-- [Get Report by Id](#get-report-by-id)
 
 The format values can be either `Raw` or `Formatted`. If the format is not specified then the default format is `Raw`. The format specified will be applied to all the data being retrieved. The impact of the format on the data retrieve will depend on the type of field. The following tables shows the impact of the format on the data retrieved for each field type.
 
