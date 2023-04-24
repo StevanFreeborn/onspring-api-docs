@@ -146,7 +146,7 @@ export default function CodeSnippet({
   return (
     <div className={styles.snippetContainer}>
       <div className={styles.snippetHeader}>
-        <div>
+        <div className={styles.snippetHeading}>
           {method ? (
             <span className={methodStyles[method]}>
               {method}
