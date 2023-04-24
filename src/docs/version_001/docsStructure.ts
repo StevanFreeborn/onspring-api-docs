@@ -76,6 +76,12 @@ export const versionOne: DocsStructure = {
               copy: 'copy.md',
               example: 'example.md',
             },
+            {
+              title: 'Get Reports by App',
+              folder: 'get_reports_by_app',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
           ],
         },
         {
