@@ -55,7 +55,14 @@ export const versionOne: DocsStructure = {
           folder: 'apps',
           copy: 'copy.md',
           example: 'example.md',
-          children: [],
+          children: [
+            {
+              title: 'Get Apps',
+              folder: 'get_apps',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
         },
         {
           title: 'Reports',
@@ -98,6 +105,12 @@ export const versionOne: DocsStructure = {
             {
               title: 'List Values',
               folder: 'list_values',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Get Fields by App',
+              folder: 'get_fields_by_app',
               copy: 'copy.md',
               example: 'example.md',
             },
