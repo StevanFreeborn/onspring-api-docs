@@ -104,7 +104,7 @@ value = '\'Test Task 5\''
 request = QueryRecordsRequest(
   appId=195,
   filter=f'{fieldId} {operator} {value}',
-  fieldIds=[9686],
+  fieldIds=[6983, 6986, 6987, 6985, 6984],
   dataFormat=DataFormat.Formatted.name,
 )
 
