@@ -130,7 +130,7 @@ These are objects representing a field value in a record. They will comprise the
 
 - increment
 - `string`
-- The increment of time. Can be one of the following values: `Years`, `Months`, `Days`, `Hours`, `Minutes`, `Seconds`.
+- The increment of time. Can be one of the following values: `Years`, `Months`, `Weeks`, `Days`, `Hours`, `Minutes`, `Seconds`.
 
 ---
 
@@ -142,13 +142,13 @@ These are objects representing a field value in a record. They will comprise the
 
 - endByDate
 - `string`
-- The end date of the time span. This will only be returned if `recurrence` is set to `EndByDate`.
+- The end date of the time span. This will only be set if `recurrence` is set to `EndByDate`.
 
 ---
 
 - endAfterOccurrences
 - `number`
-- The number of occurrences of the time span. This will only be returned if `recurrence` is set to `EndAfterOccurrences`.
+- The number of occurrences of the time span. This will only be set if `recurrence` is set to `EndAfterOccurrences`.
 
 {% /table %}
 
@@ -189,6 +189,12 @@ These are objects representing a field value in a record. They will comprise the
 - downloadLink
 - `string`
 - The download link for the file. This will only be returned if the `storageLocation` is not `Internal`.
+
+---
+
+- quickEditLink
+- `string`
+- The quick edit link for the file. This will only be returned if the `storageLocation` is not `Internal`.
 
 {% /table %}
 
