@@ -1,6 +1,6 @@
-# Data Format {% #data-format %}
+# Record Data Format {% #record-data-format %}
 
-When retrieving data via the Onspring API using certain endpoints you can specify the format of the data being retrieved. The format will be specified either in a query parameter or in the request body. These endpoints are:
+When retrieving data for [records](#records) via the Onspring API using certain endpoints you can specify the format of the data being retrieved. The format will be specified either in a query parameter or in the request body. These endpoints are:
 
 - [Get Records by App](#get-records-by-app)
 - [Get Record by Id](#get-record-by-id)

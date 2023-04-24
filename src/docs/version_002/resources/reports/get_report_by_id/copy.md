@@ -30,7 +30,7 @@ This endpoint returns the [Report Data](#report-data) for the given report.
 
 - apiDataFormat
 - `string`
-- The [format](#data-format) of the field data in the response. Valid values are `Raw` and `Formatted`. If not specified, `Raw` will be used.
+- The [format](#report-data-format) of the field data in the response. Valid values are `Raw` and `Formatted`. If not specified, `Raw` will be used.
 
 ---
 

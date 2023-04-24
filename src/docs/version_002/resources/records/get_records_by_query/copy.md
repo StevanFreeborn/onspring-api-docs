@@ -36,7 +36,7 @@ This endpoint returns a [paged](#pagination) collection of [records](#records) f
 
 - dataFormat
 - `string`
-- The [format](#data-format) of the field data in the response. Valid values are `Raw` and `Formatted`. If not specified, `Raw` will be used.
+- The [format](#record-data-format) of the field data in the response. Valid values are `Raw` and `Formatted`. If not specified, `Raw` will be used.
 
 {% /table %}
 
