@@ -187,7 +187,20 @@ export const versionOne: DocsStructure = {
         {
           title: 'Files',
           folder: 'files',
-          children: [],
+          children: [
+            {
+              title: 'Get File',
+              folder: 'get_file',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+            {
+              title: 'Add File',
+              folder: 'add_file',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
+          ],
         },
       ],
     },
