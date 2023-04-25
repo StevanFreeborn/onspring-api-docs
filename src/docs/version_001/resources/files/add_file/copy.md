@@ -75,7 +75,7 @@ This endpoint allows you to add a file to an image or attachment field on a reco
 - Content-Length
 - The number of bytes in the file.
 
-{% table %}
+{% /table %}
 
 ## Request Body
 
