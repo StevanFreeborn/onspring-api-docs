@@ -14,7 +14,7 @@ This endpoint allows you to update a record in an app. If the record update is s
 
 - appId
 - `number`
-- The id of the app or survey that the record will be added to.
+- The id of the app or survey that contains the record to be updated.
 
 ---
 

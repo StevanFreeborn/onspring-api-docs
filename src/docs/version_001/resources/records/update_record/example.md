@@ -1,9 +1,10 @@
-# Add a record in an app
+# Update a record in an app
 
 {% code method="PUT" heading="/Records/{appId}/{recordId}" defaultLanguage="bash" %}
 
 ```bash
 curl --location --request PUT 'https://api.onspring.com/v1/Records/195/12' \
+--header 'X-ApiKey: 000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000' \
 --header 'Content-Type: application/json' \
 --data '{
   "FieldData": {

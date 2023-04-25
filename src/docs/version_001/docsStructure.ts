@@ -176,6 +176,12 @@ export const versionOne: DocsStructure = {
               copy: 'copy.md',
               example: 'example.md',
             },
+            {
+              title: 'Delete Record',
+              folder: 'delete_record',
+              copy: 'copy.md',
+              example: 'example.md',
+            },
           ],
         },
         {
