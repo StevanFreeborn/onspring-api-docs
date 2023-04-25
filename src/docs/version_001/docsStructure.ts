@@ -2,6 +2,8 @@ import { DocsStructure } from '@/app/types/types';
 
 export const versionOne: DocsStructure = {
   version: 'version_001',
+  officialDocs:
+    'https://software.onspring.com/hubfs/Training/Admin%20Guide%20-%20v1%20API.pdf',
   hasSwagger: false,
   docs: [
     {

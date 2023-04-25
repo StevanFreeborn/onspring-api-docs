@@ -191,6 +191,15 @@ export default function NavBar({
             <VersionsDropdown version={version.version} />
           </li>
           <li className={styles.navItem}>
+            <Link
+              href={version.officialDocs}
+              className={styles.navLink}
+              target="_blank"
+            >
+              Official Docs
+            </Link>
+          </li>
+          <li className={styles.navItem}>
             {version.hasSwagger ? (
               <Link
                 href="https://api.onspring.com/swagger"
