@@ -10,11 +10,11 @@ curl --location --request PUT 'https://api.onspring.com/Records' \
   "appId": 195,
   "recordId": null,
   "fields": {
-    6983: "A New Test Task",
-    6984: "This is a test task.",
-    6985: "12/25/2021",
-    6986: "4118d53a-9121-4345-8682-07f23d606daa",
-    6987: [4]
+    "6983": "A New Test Task",
+    "6984": "This is a test task.",
+    "6985": "12/25/2021",
+    "6986: "4118d53a-9121-4345-8682-07f23d606daa",
+    "6987": [4]
   }
 }'
 ```
