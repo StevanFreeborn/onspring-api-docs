@@ -80,6 +80,10 @@
   border-bottom: 1px solid #0b3766;
 }
 
+.container table>tbody>tr>td:last-child {
+  word-break: break-word;
+}
+
 .container table>thead>tr>th {
   white-space: nowrap;
 }
