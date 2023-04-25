@@ -1,6 +1,6 @@
 # Add Record {% #add-record %}
 
-This endpoint allows you to add a record to an app.
+This endpoint allows you to add a record to an app. If the record creation was successful you will receive a `201` response.
 
 ## Path Parameters
 
