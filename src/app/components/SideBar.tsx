@@ -17,14 +17,18 @@ function TreeNode({ doc }: { doc: Doc }) {
     <li className={styles.listItem}>
       {hasChildren ? (
         <div className={styles.expandable}>
-          <a
-            href={`#${doc.title
-              .replaceAll(' ', '-')
-              .toLowerCase()}`}
-            className={styles.link}
-          >
-            {doc.title}
-          </a>
+          {doc.copy ? (
+            <a
+              href={`#${doc.title
+                .replaceAll(' ', '-')
+                .toLowerCase()}`}
+              className={styles.link}
+            >
+              {doc.title}
+            </a>
+          ) : (
+            <div>{doc.title}</div>
+          )}
           <div
             className={styles.chevronContainer}
             onClick={() => setIsExpanded(!isExpanded)}
@@ -60,7 +64,7 @@ function TreeNode({ doc }: { doc: Doc }) {
             )}
           </div>
         </div>
-      ) : (
+      ) : doc.copy ? (
         <a
           href={`#${doc.title
             .replaceAll(' ', '-')
@@ -69,6 +73,8 @@ function TreeNode({ doc }: { doc: Doc }) {
         >
           {doc.title}
         </a>
+      ) : (
+        <div>{doc.title}</div>
       )}
 
       {doc.children &&
