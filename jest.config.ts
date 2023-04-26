@@ -9,13 +9,14 @@ const config = {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    './src/**/*.ts',
+    './src/**/*.(ts|tsx)',
     '!**/tests/**',
     '!/node_modules',
+    '!./src/docs/**',
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['json', 'text', 'html'],
-  testMatch: ['**/tests/**/*.(test|spec|jest).ts'],
+  testMatch: ['**/tests/**/*.(test|spec|jest).(ts|tsx)'],
   testPathIgnorePatterns: ['tests/(setup|testUtils).ts'],
   verbose: true,
 };
