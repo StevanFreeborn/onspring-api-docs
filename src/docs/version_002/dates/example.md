@@ -12,8 +12,6 @@
 
 {% /code %}
 
-**Note:** The format of the date field value will be impacted based on the [data format](#data-format) sent in the request to retrieve it.
-
 {% code heading="VALUE FOR DATE FIELD" defaultLanguage="json" %}
 
 ```json
