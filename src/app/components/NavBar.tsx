@@ -199,8 +199,8 @@ export default function NavBar({
               Official Docs
             </Link>
           </li>
-          <li className={styles.navItem}>
-            {version.hasSwagger ? (
+          {version.hasSwagger ? (
+            <li className={styles.navItem}>
               <Link
                 href="https://api.onspring.com/swagger"
                 className={styles.navLink}
@@ -208,8 +208,8 @@ export default function NavBar({
               >
                 Swagger
               </Link>
-            ) : null}
-          </li>
+            </li>
+          ) : null}
           <li className={styles.navItem}>
             <Link
               href="https://onspring.com/customer-service/admin-support/"
