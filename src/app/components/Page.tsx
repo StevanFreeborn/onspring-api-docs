@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { themes, useThemeContext } from '../theme';
+import { useEffect } from 'react';
+import { useSectionContext } from '../context/section';
+import { themes, useThemeContext } from '../context/theme';
 import { DocSection, DocsStructure } from '../types/types';
 import Main from './Main';
 import NavBar from './NavBar';
@@ -17,26 +18,31 @@ export default function Page({
 }) {
   const { theme } = useThemeContext();
   const themeStyles = themes[theme];
-  const docRef = useRef<HTMLDivElement>(null);
-  const [currentSection, setCurrentSection] = useState('');
+
+  const { setSection } = useSectionContext();
 
   useEffect(() => {
     const titles =
       document.querySelectorAll<HTMLHeadingElement>(
-        '.section-title'
+        'article:nth-child(1) > h1'
       );
 
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
+            setSection(entry.target.id);
+            history.pushState(
+              null,
+              '',
+              `#${entry.target.id}`
+            );
           }
         });
       },
       {
         root: null,
-        rootMargin: '-10% 0% -80% 0%',
+        rootMargin: '-10% 0% -70% 0%',
         threshold: 1,
       }
     );
@@ -46,12 +52,12 @@ export default function Page({
     return () => {
       titles.forEach(title => observer.unobserve(title));
     };
-  }, []);
+  }, [setSection]);
 
   return (
     <div className={styles.wrapper} style={themeStyles}>
       <SideBar version={version} />
-      <div ref={docRef} className={styles.container}>
+      <div className={styles.container}>
         <NavBar version={version} />
         <Main versionSections={versionSections} />
       </div>

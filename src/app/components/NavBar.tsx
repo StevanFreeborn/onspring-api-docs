@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { themes, useThemeContext } from '../theme';
+import { themes, useThemeContext } from '../context/theme';
 import { DocsStructure } from '../types/types';
 import styles from './NavBar.module.css';
 import SectionDropdown from './SectionDropdown';

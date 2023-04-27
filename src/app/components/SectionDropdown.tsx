@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
+import { useSectionContext } from '../context/section';
 import { Doc, DocsStructure } from '../types/types';
+import { toKebabCase } from '../utils/stringUtils';
 import styles from './SectionDropdown.module.css';
 
 function SectionDropdownOption({ doc }: { doc: Doc }) {
@@ -9,6 +11,7 @@ function SectionDropdownOption({ doc }: { doc: Doc }) {
         <option
           className={styles.selectItem}
           label={doc.title}
+          value={toKebabCase(doc.title)}
         >
           {doc.title}
         </option>
@@ -17,6 +20,7 @@ function SectionDropdownOption({ doc }: { doc: Doc }) {
         <optgroup label={doc.title}>
           {doc.children.map(child => (
             <option
+              value={toKebabCase(child.title)}
               className={styles.selectItem}
               label={child.title}
               key={child.title}
@@ -35,11 +39,10 @@ export default function SectionDropdown({
 }: {
   version: DocsStructure;
 }) {
+  const { section, setSection } = useSectionContext();
   const handleSelectChange = (e: any) => {
-    const selectedOption = e.target.value;
-    location.hash = selectedOption
-      .replaceAll(' ', '-')
-      .toLowerCase();
+    setSection(e.target.value);
+    location.hash = e.target.value;
   };
 
   return (
@@ -47,6 +50,7 @@ export default function SectionDropdown({
       onChange={handleSelectChange}
       title="navigation dropdown"
       className={styles.dropdownSelect}
+      value={section}
     >
       {version.docs.map(doc => {
         return (

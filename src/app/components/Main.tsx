@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment } from 'react';
-import { themes, useThemeContext } from '../theme';
+import { themes, useThemeContext } from '../context/theme';
 import { DocSection } from '../types/types';
 import styles from './Main.module.css';
 import Section from './Section';
