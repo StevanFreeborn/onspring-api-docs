@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Doc, DocsStructure } from '../types/types';
 import styles from './SectionDropdown.module.css';
 
-function SectionDropdownGroup({ doc }: { doc: Doc }) {
+function SectionDropdownOption({ doc }: { doc: Doc }) {
   return (
     <Fragment>
       {doc.copy && doc.example && (
@@ -50,7 +50,10 @@ export default function SectionDropdown({
     >
       {version.docs.map(doc => {
         return (
-          <SectionDropdownGroup doc={doc} key={doc.title} />
+          <SectionDropdownOption
+            doc={doc}
+            key={doc.title}
+          />
         );
       })}
     </select>
