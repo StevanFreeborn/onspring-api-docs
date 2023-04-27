@@ -3,12 +3,17 @@
 import React, {
   Children,
   MouseEvent,
+  ReactElement,
   ReactNode,
   useState,
 } from 'react';
 import styles from './CodeSnippet.module.css';
 
-function CodeSnippetCopyButton() {
+function CodeSnippetCopyButton({
+  copyText,
+}: {
+  copyText: string;
+}) {
   const [copyButtonTooltip, setCopyButtonTooltip] =
     useState<boolean>(false);
 
@@ -21,13 +26,7 @@ function CodeSnippetCopyButton() {
       setCopyButtonTooltip(false);
     }, 1000);
 
-    const target = e.currentTarget;
-    const code =
-      target.parentElement?.parentElement?.parentElement?.parentElement?.querySelector(
-        'pre'
-      )?.innerText ?? '';
-
-    navigator.clipboard.writeText(code);
+    navigator.clipboard.writeText(copyText ?? '');
   };
 
   return (
@@ -130,6 +129,17 @@ export default function CodeSnippet({
     setSelectedLanguage(e.target.value);
   };
 
+  const code = Children.toArray(children)
+    .filter(
+      child =>
+        React.isValidElement(child) &&
+        child.props.className ===
+          `language-${selectedLanguage}`
+    )
+    .map(child => {
+      return child as ReactElement;
+    })[0];
+
   const snippetLanguages = Children.toArray(children).map(
     child => {
       if (React.isValidElement(child)) {
@@ -165,22 +175,13 @@ export default function CodeSnippet({
               <div className={styles.spacer} />
             </>
           ) : null}
-          <CodeSnippetCopyButton />
+          <CodeSnippetCopyButton
+            copyText={code.props.content}
+          />
         </div>
       </div>
       <div className={styles.snippetContent}>
-        <pre>
-          {Children.toArray(children)
-            .filter(
-              child =>
-                React.isValidElement(child) &&
-                child.props.className ===
-                  `language-${selectedLanguage}`
-            )
-            .map(child => {
-              return child;
-            })}
-        </pre>
+        <pre>{code}</pre>
       </div>
     </div>
   );

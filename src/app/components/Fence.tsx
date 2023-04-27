@@ -21,6 +21,7 @@ export default function Fence({
     <code
       className={`language-${language}`}
       dangerouslySetInnerHTML={{ __html: html }}
+      content={content}
     ></code>
   );
 }
