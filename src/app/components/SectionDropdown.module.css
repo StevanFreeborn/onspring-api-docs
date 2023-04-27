@@ -1,0 +1,21 @@
+.dropdownSelect {
+  color: #64adac;
+  background-color: inherit;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.dropdownSelect:focus-visible {
+  outline: none;
+}
+
+.selectItem {
+  color: #64adac;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 1rem;
+}
