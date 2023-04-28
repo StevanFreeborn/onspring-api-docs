@@ -8,35 +8,6 @@ import Fence from '../components/Fence';
 import { DOCS_PATH } from '../constants';
 import { Doc, DocSection } from './../types/types';
 
-export function getCopyPath(
-  version: string,
-  doc: Doc,
-  docPath: string
-): string {
-  if (doc.copy === undefined) {
-    return '';
-  }
-
-  return path.join(DOCS_PATH, version, docPath, doc.copy);
-}
-
-export function getExamplePath(
-  version: string,
-  doc: Doc,
-  docPath: string
-): string {
-  if (doc.example === undefined) {
-    return '';
-  }
-
-  return path.join(
-    DOCS_PATH,
-    version,
-    docPath,
-    doc.example
-  );
-}
-
 const markDocConfig = {
   nodes: {
     fence: {
@@ -93,6 +64,35 @@ function parseMarkdown(sourcePath: string): ReactNode {
   });
 
   return children;
+}
+
+export function getCopyPath(
+  version: string,
+  doc: Doc,
+  docPath: string
+): string {
+  if (doc.copy === undefined) {
+    return '';
+  }
+
+  return path.join(DOCS_PATH, version, docPath, doc.copy);
+}
+
+export function getExamplePath(
+  version: string,
+  doc: Doc,
+  docPath: string
+): string {
+  if (doc.example === undefined) {
+    return '';
+  }
+
+  return path.join(
+    DOCS_PATH,
+    version,
+    docPath,
+    doc.example
+  );
 }
 
 function getCopyChild(
