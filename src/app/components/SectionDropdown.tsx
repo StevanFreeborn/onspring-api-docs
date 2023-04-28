@@ -1,38 +1,7 @@
-import { Fragment } from 'react';
 import { useSectionContext } from '../context/section';
 import { Doc, DocsStructure } from '../types/types';
 import { toKebabCase } from '../utils/stringUtils';
 import styles from './SectionDropdown.module.css';
-
-function SectionDropdownOption({ doc }: { doc: Doc }) {
-  return (
-    <Fragment>
-      {doc.copy && doc.example && (
-        <option
-          className={styles.selectItem}
-          label={doc.title}
-          value={toKebabCase(doc.title)}
-        >
-          {doc.title}
-        </option>
-      )}
-      {doc.children && doc.children.length > 0 && (
-        <optgroup label={doc.title}>
-          {doc.children.map(child => (
-            <option
-              value={toKebabCase(child.title)}
-              className={styles.selectItem}
-              label={child.title}
-              key={child.title}
-            >
-              {child.title}
-            </option>
-          ))}
-        </optgroup>
-      )}
-    </Fragment>
-  );
-}
 
 export default function SectionDropdown({
   version,
@@ -45,6 +14,22 @@ export default function SectionDropdown({
     location.hash = e.target.value;
   };
 
+  const getAllDocs = (docs: Doc[]) => {
+    let result: Doc[] = [];
+
+    docs.forEach(doc => {
+      result.push(doc);
+
+      if (doc.children && doc.children.length > 0) {
+        result = result.concat(getAllDocs(doc.children));
+      }
+    });
+
+    return result;
+  };
+
+  const docs = getAllDocs(version.docs);
+
   return (
     <select
       onChange={handleSelectChange}
@@ -52,12 +37,23 @@ export default function SectionDropdown({
       className={styles.dropdownSelect}
       value={section}
     >
-      {version.docs.map(doc => {
+      {docs.map(doc => {
+        if (
+          doc.copy === undefined ||
+          doc.example === undefined
+        ) {
+          return null;
+        }
+
         return (
-          <SectionDropdownOption
-            doc={doc}
+          <option
+            className={styles.selectItem}
+            label={doc.title}
+            value={toKebabCase(doc.title)}
             key={doc.title}
-          />
+          >
+            {doc.title}
+          </option>
         );
       })}
     </select>
