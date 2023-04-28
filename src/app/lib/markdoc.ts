@@ -5,11 +5,10 @@ import React, { ReactNode } from 'react';
 import Clients from '../components/Clients';
 import CodeSnippet from '../components/CodeSnippet';
 import Fence from '../components/Fence';
+import { DOCS_PATH } from '../constants';
 import { Doc, DocSection } from './../types/types';
 
-const DOCS_PATH = path.join(process.cwd(), 'src/docs');
-
-function getCopyPath(
+export function getCopyPath(
   version: string,
   doc: Doc,
   docPath: string
@@ -21,7 +20,7 @@ function getCopyPath(
   return path.join(DOCS_PATH, version, docPath, doc.copy);
 }
 
-function getExamplePath(
+export function getExamplePath(
   version: string,
   doc: Doc,
   docPath: string
