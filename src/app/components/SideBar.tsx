@@ -2,6 +2,7 @@
 
 import Link from 'next/link.js';
 import { useState } from 'react';
+import { useSectionContext } from '../context/section';
 import { useThemeContext } from '../context/theme';
 import { Doc, DocsStructure } from '../types/types';
 import { toKebabCase } from '../utils/stringUtils';
@@ -10,6 +11,16 @@ import styles from './SideBar.module.css';
 function TreeNode({ doc }: { doc: Doc }) {
   const [isExpanded, setIsExpanded] =
     useState<boolean>(true);
+
+  const { section, setSection } = useSectionContext();
+
+  const docTitleId = toKebabCase(doc.title);
+
+  const isActiveSection = docTitleId === section;
+
+  const linkStyle = isActiveSection
+    ? styles.activeLink
+    : styles.link;
 
   const hasChildren =
     doc.children && doc.children?.length > 0;
@@ -20,13 +31,16 @@ function TreeNode({ doc }: { doc: Doc }) {
         <div className={styles.expandable}>
           {doc.copy ? (
             <a
-              href={`#${toKebabCase(doc.title)}`}
-              className={styles.link}
+              onClick={() => setSection(docTitleId)}
+              href={`#${docTitleId}`}
+              className={linkStyle}
             >
               {doc.title}
             </a>
           ) : (
-            <div>{doc.title}</div>
+            <div className={styles.linkGroup}>
+              {doc.title}
+            </div>
           )}
           <div
             className={styles.chevronContainer}
@@ -65,8 +79,9 @@ function TreeNode({ doc }: { doc: Doc }) {
         </div>
       ) : doc.copy ? (
         <a
-          href={`#${toKebabCase(doc.title)}`}
-          className={styles.link}
+          onClick={() => setSection(docTitleId)}
+          href={`#${docTitleId}`}
+          className={linkStyle}
         >
           {doc.title}
         </a>
