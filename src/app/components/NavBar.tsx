@@ -2,29 +2,17 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { VERSIONS } from '../constants';
 import { themes, useThemeContext } from '../context/theme';
-import { DocsStructure } from '../types/types';
+import { DocsStructure, Version } from '../types/types';
 import styles from './NavBar.module.css';
 import SectionDropdown from './SectionDropdown';
 
 function VersionsDropdown({
   version,
 }: {
-  version: string;
+  version: Version;
 }) {
-  const versions = {
-    version_001: {
-      name: 'Version 1',
-      path: '/version-1',
-    },
-    version_002: {
-      name: 'Version 2',
-      path: '/',
-    },
-  } as { [key: string]: { name: string; path: string } };
-
-  const currentVersion = versions[version];
-
   const [isDropdownOpen, setIsDropdownOpen] =
     useState<boolean>(false);
 
@@ -38,7 +26,7 @@ function VersionsDropdown({
         className={styles.navLink}
         onClick={handleDropdownToggle}
       >
-        {currentVersion.name}{' '}
+        {version.name}{' '}
         {isDropdownOpen ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,18 +64,18 @@ function VersionsDropdown({
             : styles.dropdownMenu
         }
       >
-        {Object.keys(versions)
-          .filter(v => v !== version)
+        {Object.keys(VERSIONS)
+          .filter(v => VERSIONS[v].name !== version.name)
           .map(v => (
             <Link
-              href={`${versions[v].path}`}
+              href={`${VERSIONS[v].path}`}
               key={v}
               className={styles.navLink}
               onClick={() => {
                 setIsDropdownOpen(false);
               }}
             >
-              {versions[v].name}
+              {VERSIONS[v].name}
             </Link>
           ))}
       </div>
@@ -96,12 +84,14 @@ function VersionsDropdown({
 }
 
 export default function NavBar({
-  version,
+  versionDocStructure,
 }: {
-  version: DocsStructure;
+  versionDocStructure: DocsStructure;
 }) {
   const { theme } = useThemeContext();
   const themeStyles = themes[theme];
+  const currentVersion =
+    VERSIONS[versionDocStructure.version];
 
   const [isNavOpen, setIsNavOpen] =
     useState<boolean>(false);
@@ -114,7 +104,9 @@ export default function NavBar({
     <nav style={themeStyles} className={styles.nav}>
       <ul className={styles.navListLeft}>
         <li className={styles.sectionDropdown}>
-          <SectionDropdown version={version} />
+          <SectionDropdown
+            versionDocStructure={versionDocStructure}
+          />
         </li>
       </ul>
       <div>
@@ -134,18 +126,18 @@ export default function NavBar({
           }
         >
           <li className={styles.navItem}>
-            <VersionsDropdown version={version.version} />
+            <VersionsDropdown version={currentVersion} />
           </li>
           <li className={styles.navItem}>
             <Link
-              href={version.officialDocs}
+              href={currentVersion.officialDocs}
               className={styles.navLink}
               target="_blank"
             >
               Official Docs
             </Link>
           </li>
-          {version.hasSwagger ? (
+          {currentVersion.hasSwagger ? (
             <li className={styles.navItem}>
               <Link
                 href="https://api.onspring.com/swagger"

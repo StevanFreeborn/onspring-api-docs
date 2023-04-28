@@ -10,5 +10,5 @@ https://api.onspring.com/v1
 
 {% /code %}
 
-{% clients version="1" %}
+{% clients version="version_001" %}
 {% /clients %}

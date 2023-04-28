@@ -10,7 +10,7 @@ export default function VersionOne() {
 
   return (
     <Page
-      version={versionOne}
+      versionDocStructure={versionOne}
       versionSections={versionOneSections}
     />
   );

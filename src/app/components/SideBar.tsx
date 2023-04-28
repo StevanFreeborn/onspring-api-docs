@@ -107,9 +107,9 @@ function ListTree({ docs }: { docs: Doc[] }) {
 }
 
 export default function SideBar({
-  version,
+  versionDocStructure,
 }: {
-  version: DocsStructure;
+  versionDocStructure: DocsStructure;
 }) {
   const { theme, setTheme } = useThemeContext();
 
@@ -138,7 +138,7 @@ export default function SideBar({
           ></span>
         </label>
       </div>
-      <ListTree docs={version.docs} />
+      <ListTree docs={versionDocStructure.docs} />
     </div>
   );
 }

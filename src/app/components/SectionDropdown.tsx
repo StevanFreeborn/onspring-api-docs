@@ -4,9 +4,9 @@ import { toKebabCase } from '../utils/stringUtils';
 import styles from './SectionDropdown.module.css';
 
 export default function SectionDropdown({
-  version,
+  versionDocStructure,
 }: {
-  version: DocsStructure;
+  versionDocStructure: DocsStructure;
 }) {
   const { section, setSection } = useSectionContext();
   const handleSelectChange = (e: any) => {
@@ -28,7 +28,7 @@ export default function SectionDropdown({
     return result;
   };
 
-  const docs = getAllDocs(version.docs);
+  const docs = getAllDocs(versionDocStructure.docs);
 
   return (
     <select

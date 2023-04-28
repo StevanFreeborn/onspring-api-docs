@@ -10,10 +10,10 @@ import styles from './Page.module.css';
 import SideBar from './SideBar';
 
 export default function Page({
-  version,
+  versionDocStructure,
   versionSections,
 }: {
-  version: DocsStructure;
+  versionDocStructure: DocsStructure;
   versionSections: DocSection[];
 }) {
   const { theme } = useThemeContext();
@@ -56,9 +56,9 @@ export default function Page({
 
   return (
     <div className={styles.wrapper} style={themeStyles}>
-      <SideBar version={version} />
+      <SideBar versionDocStructure={versionDocStructure} />
       <div className={styles.container}>
-        <NavBar version={version} />
+        <NavBar versionDocStructure={versionDocStructure} />
         <Main versionSections={versionSections} />
       </div>
     </div>
