@@ -1,4 +1,4 @@
-# Authentication {% #authentication %}
+# Authentication {% #authentication .section-title %}
 
 The Onpsring API uses API keys to authenticate requests. These keys are specific to a given Onspring instance. You can view and manage your API keys from within your instance.
 

@@ -1,7 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import { ReactNode } from 'react';
+import { SectionContextProvider } from './context/section';
+import { ThemeContextProvider } from './context/theme';
 import './globals.css';
-import { ThemeContextProvider } from './theme';
 
 export const metadata = {
   title: 'Onspring API Docs',
@@ -30,7 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeContextProvider>
-          {children}
+          <SectionContextProvider>
+            {children}
+          </SectionContextProvider>
         </ThemeContextProvider>
         <Analytics />
       </body>

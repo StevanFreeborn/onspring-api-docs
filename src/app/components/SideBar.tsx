@@ -2,8 +2,9 @@
 
 import Link from 'next/link.js';
 import { useState } from 'react';
-import { useThemeContext } from '../theme';
-import { Doc, DocsStructure } from '../types/types.js';
+import { useThemeContext } from '../context/theme';
+import { Doc, DocsStructure } from '../types/types';
+import { toKebabCase } from '../utils/stringUtils';
 import styles from './SideBar.module.css';
 
 function TreeNode({ doc }: { doc: Doc }) {
@@ -19,9 +20,7 @@ function TreeNode({ doc }: { doc: Doc }) {
         <div className={styles.expandable}>
           {doc.copy ? (
             <a
-              href={`#${doc.title
-                .replaceAll(' ', '-')
-                .toLowerCase()}`}
+              href={`#${toKebabCase(doc.title)}`}
               className={styles.link}
             >
               {doc.title}
@@ -66,9 +65,7 @@ function TreeNode({ doc }: { doc: Doc }) {
         </div>
       ) : doc.copy ? (
         <a
-          href={`#${doc.title
-            .replaceAll(' ', '-')
-            .toLowerCase()}`}
+          href={`#${toKebabCase(doc.title)}`}
           className={styles.link}
         >
           {doc.title}
