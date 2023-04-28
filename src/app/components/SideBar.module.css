@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   border-right: 1px solid #848586;
-  padding: 0 1rem;
+  padding: 0 1rem 0 0.5rem;
   overflow: auto;
   background-color: inherit;
   width: 300px;
@@ -64,17 +64,24 @@
   width: 100%;
 }
 
+.linkGroup {
+  padding: 0 0.5rem;
+}
+
 .link,
 .activeLink {
+  padding: 0 1rem 0 0.5rem;
   text-decoration: none;
+}
+
+.activeLink {
+  background-color: #8485866b;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
 }
 
 .link:hover {
   color: #64adac;
-}
-
-.activeLink {
-  background-color: #1e1e1e;
 }
 
 .expandable {
