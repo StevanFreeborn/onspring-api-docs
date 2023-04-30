@@ -8,7 +8,7 @@ import Fence from '../components/Fence';
 import { DOCS_PATH } from '../constants';
 import { Doc, DocSection } from './../types/types';
 
-const markDocConfig = {
+export const markDocConfig = {
   nodes: {
     fence: {
       render: 'Fence',
@@ -48,7 +48,9 @@ const markDocConfig = {
   },
 };
 
-function parseMarkdown(sourcePath: string): ReactNode {
+export function parseMarkdown(
+  sourcePath: string
+): ReactNode {
   const source = fs.readFileSync(sourcePath, 'utf8');
   const ast = Markdoc.parse(source);
   const content = Markdoc.transform(
