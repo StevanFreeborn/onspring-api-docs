@@ -2,12 +2,7 @@ import Clients from '@/app/components/Clients';
 import CodeSnippet from '@/app/components/CodeSnippet';
 import Fence from '@/app/components/Fence';
 import { DOCS_PATH } from '@/app/constants';
-import {
-  getCopyPath,
-  getExamplePath,
-  markDocConfig,
-  parseMarkdown,
-} from '@/app/lib/markdoc';
+import * as MarkdocLibrary from '@/app/lib/markdoc';
 import { Doc } from '@/app/types/types';
 import { default as Markdoc } from '@markdoc/markdoc';
 import fs from 'fs';
@@ -32,13 +27,21 @@ describe('Markdoc lib functions', () => {
         folder: 'folder',
       };
 
-      const result = getCopyPath(version, doc, docPath);
+      const result = MarkdocLibrary.getCopyPath(
+        version,
+        doc,
+        docPath
+      );
 
       expect(result).toEqual('');
     });
 
     it('returns correct copy path', () => {
-      const result = getCopyPath(version, doc, docPath);
+      const result = MarkdocLibrary.getCopyPath(
+        version,
+        doc,
+        docPath
+      );
 
       const expected = path.join(
         DOCS_PATH,
@@ -51,7 +54,7 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct copy path with leading/trailing slashes in docPath', () => {
-      const result = getCopyPath(
+      const result = MarkdocLibrary.getCopyPath(
         version,
         doc,
         '/path/to/doc/'
@@ -68,7 +71,11 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct copy path with different version', () => {
-      const result = getCopyPath('v2.0.0', doc, docPath);
+      const result = MarkdocLibrary.getCopyPath(
+        'v2.0.0',
+        doc,
+        docPath
+      );
 
       const expected = path.join(
         DOCS_PATH,
@@ -81,7 +88,7 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct copy path with nested docPath', () => {
-      const result = getCopyPath(
+      const result = MarkdocLibrary.getCopyPath(
         version,
         doc,
         'path/to/nested/doc'
@@ -115,13 +122,21 @@ describe('Markdoc lib functions', () => {
         folder: 'folder',
       };
 
-      const result = getExamplePath(version, doc, docPath);
+      const result = MarkdocLibrary.getExamplePath(
+        version,
+        doc,
+        docPath
+      );
 
       expect(result).toEqual('');
     });
 
     it('returns correct example path', () => {
-      const result = getExamplePath(version, doc, docPath);
+      const result = MarkdocLibrary.getExamplePath(
+        version,
+        doc,
+        docPath
+      );
 
       const expected = path.join(
         DOCS_PATH,
@@ -134,7 +149,7 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct example path with leading/trailing slashes in docPath', () => {
-      const result = getExamplePath(
+      const result = MarkdocLibrary.getExamplePath(
         version,
         doc,
         '/path/to/doc/'
@@ -151,7 +166,11 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct example path with different version', () => {
-      const result = getExamplePath('v2.0.0', doc, docPath);
+      const result = MarkdocLibrary.getExamplePath(
+        'v2.0.0',
+        doc,
+        docPath
+      );
 
       const expected = path.join(
         DOCS_PATH,
@@ -164,7 +183,7 @@ describe('Markdoc lib functions', () => {
     });
 
     it('returns correct example path with nested docPath', () => {
-      const result = getExamplePath(
+      const result = MarkdocLibrary.getExamplePath(
         version,
         doc,
         'path/to/nested/doc'
@@ -191,6 +210,10 @@ describe('Markdoc lib functions', () => {
         .mockReturnValue(sourceContent);
     });
 
+    afterAll(() => {
+      jest.restoreAllMocks();
+    });
+
     it('should parse markdown file and return react node', () => {
       const expected = (
         <article>
@@ -198,13 +221,14 @@ describe('Markdoc lib functions', () => {
         </article>
       );
 
-      const result = parseMarkdown(sourcePath);
+      const result =
+        MarkdocLibrary.parseMarkdown(sourcePath);
 
       expect(result).toEqual(expected);
     });
 
     it('should read source file using the correct path', () => {
-      parseMarkdown(sourcePath);
+      MarkdocLibrary.parseMarkdown(sourcePath);
 
       expect(fs.readFileSync).toHaveBeenCalledWith(
         sourcePath,
@@ -216,11 +240,11 @@ describe('Markdoc lib functions', () => {
       const ast = Markdoc.parse(sourceContent);
       const spy = jest.spyOn(Markdoc, 'transform');
 
-      parseMarkdown(sourcePath);
+      MarkdocLibrary.parseMarkdown(sourcePath);
 
       expect(spy).toHaveBeenCalledWith(
         ast,
-        markDocConfig as any
+        MarkdocLibrary.markDocConfig as any
       );
     });
 
@@ -229,7 +253,7 @@ describe('Markdoc lib functions', () => {
 
       const content = Markdoc.transform(
         ast,
-        markDocConfig as any
+        MarkdocLibrary.markDocConfig as any
       );
 
       const expected = (
@@ -239,7 +263,8 @@ describe('Markdoc lib functions', () => {
       );
 
       const spy = jest.spyOn(Markdoc.renderers, 'react');
-      const result = parseMarkdown(sourcePath);
+      const result =
+        MarkdocLibrary.parseMarkdown(sourcePath);
 
       expect(spy).toHaveBeenCalledWith(content, React, {
         components: {
@@ -250,6 +275,18 @@ describe('Markdoc lib functions', () => {
       });
 
       expect(result).toEqual(expected);
+    });
+  });
+
+  describe('getCopyChild', () => {
+    it('should return the correct child copy react nodes for the given doc', () => {
+      const result = MarkdocLibrary.getCopyPath(
+        'version',
+        { title: 'hello', folder: 'hello' },
+        'hello'
+      );
+
+      expect(result).toEqual('hello');
     });
   });
 });
