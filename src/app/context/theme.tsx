@@ -7,6 +7,11 @@ import {
   useState,
 } from 'react';
 
+interface ThemeContextType {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
+
 const darkTheme = {
   color: 'white',
   backgroundColor: '#05254a',
@@ -17,7 +22,9 @@ const lightTheme = {
   backgroundColor: 'white',
 };
 
-const ThemeContext = createContext({});
+const ThemeContext = createContext<
+  ThemeContextType | undefined
+>(undefined);
 
 export const ThemeContextProvider = ({
   children,
@@ -38,5 +45,12 @@ export const themes = {
   light: lightTheme,
 } as { [key: string]: { [key: string]: string } };
 
-export const useThemeContext: any = () =>
-  useContext(ThemeContext);
+export const useThemeContext = (): ThemeContextType => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error(
+      'useThemeContext must be used within ThemeContextProvider'
+    );
+  }
+  return context;
+};

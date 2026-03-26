@@ -7,7 +7,14 @@ import {
   useState,
 } from 'react';
 
-const SectionContext = createContext({});
+type SectionContextType = {
+  section: string;
+  setSection: (section: string) => void;
+};
+
+const SectionContext = createContext<
+  SectionContextType | undefined
+>(undefined);
 
 export const SectionContextProvider = ({
   children,
@@ -25,5 +32,12 @@ export const SectionContextProvider = ({
   );
 };
 
-export const useSectionContext: any = () =>
-  useContext(SectionContext);
+export const useSectionContext = (): SectionContextType => {
+  const context = useContext(SectionContext);
+  if (!context) {
+    throw new Error(
+      'useSectionContext must be used within SectionContextProvider'
+    );
+  }
+  return context;
+};

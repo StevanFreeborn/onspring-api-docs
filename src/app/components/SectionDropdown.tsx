@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { useSectionContext } from '../context/section';
 import { Doc, DocsStructure } from '../types/types';
 import { toKebabCase } from '../utils/stringUtils';
@@ -9,7 +10,9 @@ export default function SectionDropdown({
   version: DocsStructure;
 }) {
   const { section, setSection } = useSectionContext();
-  const handleSelectChange = (e: any) => {
+  const handleSelectChange = (
+    e: ChangeEvent<HTMLSelectElement>
+  ) => {
     setSection(e.target.value);
     location.hash = e.target.value;
   };

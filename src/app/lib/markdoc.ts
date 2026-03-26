@@ -83,7 +83,7 @@ function parseMarkdown(sourcePath: string): ReactNode {
   const ast = Markdoc.parse(source);
   const content = Markdoc.transform(
     ast,
-    markDocConfig as any
+    markDocConfig as never
   );
   const children = Markdoc.renderers.react(content, React, {
     components: {
