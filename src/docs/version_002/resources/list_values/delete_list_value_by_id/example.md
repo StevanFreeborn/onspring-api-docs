@@ -67,4 +67,22 @@ print(f'Status Code: {response.statusCode}')
 print(f'Message: {response.message}')
 ```
 
+```rust
+use onspring::OnspringClient;
+use uuid::Uuid;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let item_id = Uuid::parse_str(
+  "e3371dbf-b557-4a31-b32f-33c0265d2a59"
+)?;
+
+client.delete_list_item(906, item_id).await?;
+
+println!("List item deleted");
+```
+
 {% /code %}

@@ -67,6 +67,26 @@ for app in response.data.apps:
   print(f'href: {app.href}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let ids = vec![8, 79, 137, 193, 183];
+let response = client.batch_get_apps(&ids).await?;
+
+for app in response.items.unwrap_or_default() {
+  println!(
+    "{}, {}",
+    app.id,
+    app.name.unwrap_or_default()
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

@@ -54,6 +54,19 @@ print(f'Status Code: {response.statusCode}')
 print(f'Field Id: {response.data.id}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let field = client.get_field(6986).await?;
+
+println!("Field Id: {}", field.id);
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

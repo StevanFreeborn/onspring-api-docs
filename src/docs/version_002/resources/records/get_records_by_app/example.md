@@ -71,6 +71,32 @@ for record in response.data.records:
     print(f'Value: {field.GetResultValueString()}')
 ```
 
+```rust
+use onspring::{OnspringClient, PagingRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let paging = PagingRequest {
+  page_number: 1,
+  page_size: 10,
+};
+
+let response = client
+  .list_records(195, Some(paging), None, None)
+  .await?;
+
+for record in response.items.unwrap_or_default() {
+  println!(
+    "AppId: {}, RecordId: {}",
+    record.app_id,
+    record.record_id
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

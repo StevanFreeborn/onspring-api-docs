@@ -64,6 +64,33 @@ for report in response.data.reports:
   print(f' Description: {report.description}')
 ```
 
+```rust
+use onspring::{OnspringClient, PagingRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let paging = PagingRequest {
+  page_number: 1,
+  page_size: 10,
+};
+
+let response = client
+  .list_reports(195, Some(paging))
+  .await?;
+
+for report in response.items.unwrap_or_default() {
+  println!(
+    "{}, {}, {}",
+    report.id,
+    report.app_id,
+    report.name.unwrap_or_default()
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

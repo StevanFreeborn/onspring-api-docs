@@ -76,6 +76,25 @@ with open(filePath, "wb") as file:
 print(f'File Location: {filePath}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let file = client
+  .get_file(1, 6989, 89)
+  .await?;
+
+println!("File Name: {:?}", file.file_name);
+println!("Content Type: {:?}", file.content_type);
+println!("Size: {} bytes", file.data.len());
+
+std::fs::write(&file.file_name, &file.data)?;
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="text" %}

@@ -100,6 +100,34 @@ for record in response.data.records:
     print(f'Value: {field.GetResultValueString()}')
 ```
 
+```rust
+use onspring::{OnspringClient, BatchGetRecordsRequest, DataFormat};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let request = BatchGetRecordsRequest {
+  app_id: 195,
+  record_ids: vec![1],
+  field_ids: Some(vec![6983, 6986, 6987, 6985, 6984]),
+  data_format: Some(DataFormat::Raw),
+};
+
+let response = client
+  .batch_get_records(request)
+  .await?;
+
+for record in response.items.unwrap_or_default() {
+  println!(
+    "AppId: {}, RecordId: {}",
+    record.app_id,
+    record.record_id
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

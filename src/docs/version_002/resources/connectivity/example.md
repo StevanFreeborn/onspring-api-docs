@@ -56,4 +56,16 @@ else:
   print('Attempt to connect failed')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+client.ping().await?;
+println!("Connected to the Onspring API successfully.");
+```
+
 {% /code %}

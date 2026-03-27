@@ -64,6 +64,26 @@ for field in response.data.fields:
   print(f'Field Id: {field.id}')
 ```
 
+```rust
+use onspring::{OnspringClient, PagingRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let paging = PagingRequest {
+  page_number: 1,
+  page_size: 10,
+};
+
+let response = client.list_fields(195, Some(paging)).await?;
+
+for field in response.items.unwrap_or_default() {
+  println!("Field Id: {}", field.id);
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}
