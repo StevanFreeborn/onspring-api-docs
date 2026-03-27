@@ -79,6 +79,23 @@ for field in response.items.unwrap_or_default() {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+batch, _ := client.Fields.GetMany(
+  context.Background(),
+  []int{6983, 6986, 6987, 6985, 6984},
+)
+
+for _, field := range batch.Items {
+  fmt.Printf("Field Id: %d\n", field.Id)
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

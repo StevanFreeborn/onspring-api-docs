@@ -128,6 +128,32 @@ for record in response.items.unwrap_or_default() {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+batch, _ := client.Records.GetMany(
+  context.Background(),
+  onspring.GetManyRecordsRequest{
+    AppId:      195,
+    RecordIds:  []int{1},
+    FieldIds:   []int{6983, 6986, 6987, 6985, 6984},
+    DataFormat: "Raw",
+  },
+)
+
+for _, record := range batch.Items {
+  fmt.Printf(
+    "AppId: %d, RecordId: %d\n",
+    record.AppId,
+    record.RecordId,
+  )
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

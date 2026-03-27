@@ -95,6 +95,27 @@ println!("Size: {} bytes", file.data.len());
 std::fs::write(&file.file_name, &file.data)?;
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+file, _ := client.Files.GetContent(
+  context.Background(),
+  1,
+  6989,
+  89,
+)
+
+fmt.Printf("File Name: %s\n", file.FileName)
+fmt.Printf("Content Type: %s\n", file.ContentType)
+fmt.Printf("Size: %d bytes\n", len(file.Data))
+
+os.WriteFile(file.FileName, file.Data, 0644)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="text" %}

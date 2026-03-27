@@ -85,4 +85,22 @@ client.delete_list_item(906, item_id).await?;
 println!("List item deleted");
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+err := client.Lists.Delete(
+  context.Background(),
+  906,
+  "e3371dbf-b557-4a31-b32f-33c0265d2a59",
+)
+
+if err == nil {
+  fmt.Println("List item deleted")
+}
+```
+
 {% /code %}

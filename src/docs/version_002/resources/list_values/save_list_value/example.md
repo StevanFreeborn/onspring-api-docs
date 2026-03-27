@@ -111,6 +111,29 @@ let response = client
 println!("Id: {}", response.id);
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+numericValue := 0.0
+color := "#ffffff"
+
+response, _ := client.Lists.Save(
+  context.Background(),
+  906,
+  onspring.SaveListItemRequest{
+    Name:         "Not Started",
+    NumericValue: &numericValue,
+    Color:        &color,
+  },
+)
+
+fmt.Printf("Id: %s\n", response.Id)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

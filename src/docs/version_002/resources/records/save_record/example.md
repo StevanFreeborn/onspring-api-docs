@@ -165,6 +165,30 @@ let response = client.save_record(request).await?;
 println!("New Record Id is: {}", response.id);
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+response, _ := client.Records.Save(
+  context.Background(),
+  onspring.SaveRecordRequest{
+    AppId: 195,
+    Fields: map[string]any{
+      "6983": "A New Test Task",
+      "6984": "This is a test task.",
+      "6985": "12/25/2021",
+      "6986": "4118d53a-9121-4345-8682-07f23d606daa",
+      "6987": []int{4},
+    },
+  },
+)
+
+fmt.Printf("New Record Id is: %d\n", response.Id)
+```
+
 {% /code %}
 
 {% code heading="Response" defaultLanguage="json" %}

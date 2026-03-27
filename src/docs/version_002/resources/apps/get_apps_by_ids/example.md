@@ -87,6 +87,23 @@ for app in response.items.unwrap_or_default() {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+batch, _ := client.Apps.GetMany(
+  context.Background(),
+  []int{8, 79, 137, 193, 183},
+)
+
+for _, app := range batch.Items {
+  fmt.Printf("%d, %s\n", app.Id, app.Name)
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

@@ -4,6 +4,7 @@ import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-rust';
+import 'prismjs/components/prism-go';
 import './prism-custom.css';
 
 export default function Fence({

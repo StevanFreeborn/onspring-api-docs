@@ -67,6 +67,21 @@ let field = client.get_field(6986).await?;
 println!("Field Id: {}", field.id);
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+field, _ := client.Fields.Get(
+  context.Background(),
+  6986,
+)
+
+fmt.Printf("Field Id: %d\n", field.Id)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

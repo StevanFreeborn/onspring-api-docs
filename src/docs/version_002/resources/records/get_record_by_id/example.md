@@ -100,6 +100,35 @@ if let Some(field_data) = record.field_data {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+record, _ := client.Records.Get(
+  context.Background(),
+  195,
+  1,
+)
+
+fmt.Printf(
+  "AppId: %d, RecordId: %d\n",
+  record.AppId,
+  record.RecordId,
+)
+
+for _, field := range record.FieldData {
+  fmt.Printf(
+    "FieldId: %d, Type: %s, Value: %v\n",
+    field.FieldId,
+    field.Type,
+    field.Value,
+  )
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}
