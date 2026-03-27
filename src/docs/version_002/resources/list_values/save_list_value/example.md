@@ -89,6 +89,28 @@ print(f'Status Code: {response.statusCode}')
 print(f'Id: {response.data.id}')
 ```
 
+```rust
+use onspring::{OnspringClient, SaveListItemRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let request = SaveListItemRequest {
+  id: None,
+  name: "Not Started".to_string(),
+  numeric_value: Some(0.0),
+  color: Some("#ffffff".to_string()),
+};
+
+let response = client
+  .save_list_item(906, request)
+  .await?;
+
+println!("Id: {}", response.id);
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

@@ -126,6 +126,34 @@ for record in response.data.records:
     print(f'Value: {field.GetResultValueString()}')
 ```
 
+```rust
+use onspring::{OnspringClient, QueryRecordsRequest, DataFormat};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let query = QueryRecordsRequest {
+  app_id: 195,
+  filter: "6983 eq 'Test Task 5'".to_string(),
+  field_ids: Some(vec![6983, 6986, 6987, 6985, 6984]),
+  data_format: Some(DataFormat::Formatted),
+};
+
+let response = client
+  .query_records(query, None)
+  .await?;
+
+for record in response.items.unwrap_or_default() {
+  println!(
+    "AppId: {}, RecordId: {}",
+    record.app_id,
+    record.record_id
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

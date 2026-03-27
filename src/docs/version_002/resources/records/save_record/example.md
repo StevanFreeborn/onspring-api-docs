@@ -123,6 +123,48 @@ for warning in response.data.warnings:
   print(f'Warning: {warning}')
 ```
 
+```rust
+use onspring::{OnspringClient, SaveRecordRequest};
+use std::collections::HashMap;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let mut fields = HashMap::new();
+fields.insert(
+  "6983".to_string(),
+  serde_json::json!("A New Test Task"),
+);
+fields.insert(
+  "6984".to_string(),
+  serde_json::json!("This is a test task."),
+);
+fields.insert(
+  "6985".to_string(),
+  serde_json::json!("12/25/2021"),
+);
+fields.insert(
+  "6986".to_string(),
+  serde_json::json!("4118d53a-9121-4345-8682-07f23d606daa"),
+);
+fields.insert(
+  "6987".to_string(),
+  serde_json::json!([4]),
+);
+
+let request = SaveRecordRequest {
+  app_id: 195,
+  record_id: None,
+  fields,
+};
+
+let response = client.save_record(request).await?;
+
+println!("New Record Id is: {}", response.id);
+```
+
 {% /code %}
 
 {% code heading="Response" defaultLanguage="json" %}

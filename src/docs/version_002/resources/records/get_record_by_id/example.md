@@ -70,6 +70,36 @@ for field in response.data.fields:
   print(f'Value: {field.GetResultValueString()}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let record = client
+  .get_record(195, 1, None, None)
+  .await?;
+
+println!(
+  "AppId: {}, RecordId: {}",
+  record.app_id,
+  record.record_id
+);
+
+if let Some(field_data) = record.field_data {
+  for field in field_data {
+    println!(
+      "FieldId: {}, Type: {:?}, Value: {}",
+      field.field_id,
+      field.value_type,
+      field.value
+    );
+  }
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

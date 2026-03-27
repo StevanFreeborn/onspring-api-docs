@@ -53,6 +53,22 @@ print(f'Name: {response.data.fileInfo.name}')
 print(f'Content Type: {response.data.fileInfo.contentType}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let info = client
+  .get_file_info(1, 6989, 89)
+  .await?;
+
+println!("Name: {:?}", info.name);
+println!("Content Type: {:?}", info.content_type);
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

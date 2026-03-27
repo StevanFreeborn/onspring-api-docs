@@ -2,12 +2,23 @@
 
 import React, {
   Children,
-  MouseEvent,
   ReactElement,
   ReactNode,
   useState,
 } from 'react';
 import styles from './CodeSnippet.module.css';
+
+interface MarkdocFenceProps {
+  language?: string;
+  content?: string;
+  className?: string;
+}
+
+function isMarkdocElement(
+  child: ReactNode
+): child is ReactElement<MarkdocFenceProps> {
+  return React.isValidElement(child);
+}
 
 function CodeSnippetCopyButton({
   copyText,
@@ -20,7 +31,7 @@ function CodeSnippetCopyButton({
   const [showTooltip, setShowTooltip] =
     useState<boolean>(false);
 
-  const handleCopy = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleCopy = () => {
     setCopyButtonTooltip(true);
     setTimeout(() => {
       setCopyButtonTooltip(false);
@@ -129,29 +140,28 @@ export default function CodeSnippet({
     setSelectedLanguage(e.target.value);
   };
 
-  const code = Children.toArray(children)
-    .filter(
-      child =>
-        React.isValidElement(child) &&
-        child.props.className ===
-          `language-${selectedLanguage}`
-    )
-    .map(child => {
-      return child as ReactElement;
-    })[0];
+  const childrenArray = Children.toArray(children);
 
-  const snippetLanguages = Children.toArray(children).map(
-    child => {
-      if (React.isValidElement(child)) {
-        const languageClassParts =
-          child.props.className.split('-');
-        if (languageClassParts.length > 1) {
-          const language = languageClassParts[1];
-          return language;
-        }
-      }
+  const code = childrenArray.find(
+    (child): child is ReactElement<MarkdocFenceProps> => {
+      if (!isMarkdocElement(child)) return false;
+      const { language, className } = child.props;
+      return (
+        language === selectedLanguage ||
+        className === `language-${selectedLanguage}`
+      );
     }
   );
+
+  const snippetLanguages = childrenArray
+    .map(child => {
+      if (isMarkdocElement(child)) {
+        const { language, className } = child.props;
+        return language || className?.split('-')[1];
+      }
+      return undefined;
+    })
+    .filter((l): l is string => typeof l === 'string');
 
   return (
     <div className={styles.snippetContainer}>
@@ -176,7 +186,7 @@ export default function CodeSnippet({
             </>
           ) : null}
           <CodeSnippetCopyButton
-            copyText={code.props.content}
+            copyText={code?.props.content ?? ''}
           />
         </div>
       </div>

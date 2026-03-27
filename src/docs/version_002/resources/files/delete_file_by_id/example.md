@@ -60,4 +60,17 @@ else:
   print('Error deleting file')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+client.delete_file(140, 6989, 1904).await?;
+
+println!("File deleted successfully");
+```
+
 {% /code %}

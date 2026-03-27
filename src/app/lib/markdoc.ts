@@ -83,7 +83,7 @@ function parseMarkdown(sourcePath: string): ReactNode {
   const ast = Markdoc.parse(source);
   const content = Markdoc.transform(
     ast,
-    markDocConfig as any
+    markDocConfig as never
   );
   const children = Markdoc.renderers.react(content, React, {
     components: {
@@ -102,7 +102,13 @@ function getCopyChild(
   docPath: string
 ) {
   const copyPath = getCopyPath(version, doc, docPath);
-  return parseMarkdown(copyPath);
+  const child = parseMarkdown(copyPath);
+
+  if (React.isValidElement(child)) {
+    return React.cloneElement(child, { key: 'copy' });
+  }
+
+  return child;
 }
 
 function getExampleChild(
@@ -111,7 +117,13 @@ function getExampleChild(
   docPath: string
 ) {
   const examplePath = getExamplePath(version, doc, docPath);
-  return parseMarkdown(examplePath);
+  const child = parseMarkdown(examplePath);
+
+  if (React.isValidElement(child)) {
+    return React.cloneElement(child, { key: 'example' });
+  }
+
+  return child;
 }
 
 export function loadSections(

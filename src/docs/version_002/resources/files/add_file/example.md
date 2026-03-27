@@ -96,6 +96,31 @@ print(f'Status Code: {response.statusCode}')
 print(f'File Id: {response.data.id}')
 ```
 
+```rust
+use onspring::{OnspringClient, SaveFileRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let request = SaveFileRequest {
+  record_id: 140,
+  field_id: 6989,
+  notes: Some(
+    "Updating record with attachment.".to_string()
+  ),
+  modified_date: Some(chrono::Utc::now()),
+  file_name: "test-attachment.txt".to_string(),
+  file_data: std::fs::read("test-attachment.txt")?,
+  content_type: "text/plain".to_string(),
+};
+
+let response = client.upload_file(request).await?;
+
+println!("New File Id is: {}", response.id);
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

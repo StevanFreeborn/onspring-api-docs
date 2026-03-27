@@ -66,6 +66,30 @@ for app in response.data.apps:
   print(f'href: {app.href}')
 ```
 
+```rust
+use onspring::{OnspringClient, PagingRequest};
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let paging = PagingRequest {
+  page_number: 1,
+  page_size: 10,
+};
+
+let response = client.list_apps(Some(paging)).await?;
+
+for app in response.items.unwrap_or_default() {
+  println!(
+    "{}, {}",
+    app.id,
+    app.name.unwrap_or_default()
+  );
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

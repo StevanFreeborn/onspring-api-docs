@@ -9,6 +9,8 @@ export default function GlobalError({
   error: Error;
   reset: () => void;
 }) {
+  console.error(error);
+
   return (
     <div className={styles.container}>
       <h2>Something went wrong!</h2>

@@ -63,6 +63,22 @@ for field in response.data.fields:
   print(f'Field Id: {field.id}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let ids = vec![6983, 6986, 6987, 6985, 6984];
+let response = client.batch_get_fields(&ids).await?;
+
+for field in response.items.unwrap_or_default() {
+  println!("Field Id: {}", field.id);
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

@@ -56,6 +56,23 @@ print(f'Name: {response.data.app.name}')
 print(f'href: {response.data.app.href}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let app = client.get_app(195).await?;
+
+println!(
+  "{}, {}",
+  app.id,
+  app.name.unwrap_or_default()
+);
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

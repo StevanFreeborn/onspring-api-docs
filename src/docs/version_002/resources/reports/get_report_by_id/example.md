@@ -64,6 +64,31 @@ for row in response.data.rows:
   print(f'Record Id {row.recordId}: {", ".join([str(cell) for cell in row.cells])}')
 ```
 
+```rust
+use onspring::OnspringClient;
+
+let client = OnspringClient::builder(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000"
+)
+.build();
+
+let data = client
+  .get_report(613, None, None)
+  .await?;
+
+println!("Columns: {:?}", data.columns);
+
+if let Some(rows) = data.rows {
+  for row in rows {
+    println!(
+      "Record Id {:?}: {:?}",
+      row.record_id,
+      row.cells
+    );
+  }
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

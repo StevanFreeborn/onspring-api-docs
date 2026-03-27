@@ -1,10 +1,11 @@
-import nextJest from 'next/jest';
+import type { Config } from 'jest';
+import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
   dir: './',
 });
 
-const config = {
+const config: Config = {
   testEnvironment: 'jest-environment-jsdom',
   clearMocks: true,
   collectCoverage: true,
