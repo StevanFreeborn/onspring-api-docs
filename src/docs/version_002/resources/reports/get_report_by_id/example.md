@@ -89,6 +89,29 @@ if let Some(rows) = data.rows {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+data, _ := client.Reports.Get(
+  context.Background(),
+  613,
+)
+
+fmt.Printf("Columns: %v\n", data.Columns)
+
+for _, row := range data.Rows {
+  fmt.Printf(
+    "Record Id %v: %v\n",
+    row.RecordId,
+    row.Cells,
+  )
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

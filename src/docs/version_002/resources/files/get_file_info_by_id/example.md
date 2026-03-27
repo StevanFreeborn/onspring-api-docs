@@ -69,6 +69,24 @@ println!("Name: {:?}", info.name);
 println!("Content Type: {:?}", info.content_type);
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+info, _ := client.Files.GetInfo(
+  context.Background(),
+  1,
+  6989,
+  89,
+)
+
+fmt.Printf("Name: %s\n", info.Name)
+fmt.Printf("Content Type: %s\n", info.ContentType)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

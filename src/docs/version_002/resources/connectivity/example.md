@@ -68,4 +68,18 @@ client.ping().await?;
 println!("Connected to the Onspring API successfully.");
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+err := client.Ping.Get(context.Background())
+
+if err == nil {
+  fmt.Println("Connected to Onspring API")
+}
+```
+
 {% /code %}

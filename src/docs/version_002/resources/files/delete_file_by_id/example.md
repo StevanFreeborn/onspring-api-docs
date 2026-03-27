@@ -73,4 +73,23 @@ client.delete_file(140, 6989, 1904).await?;
 println!("File deleted successfully");
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+err := client.Files.Delete(
+  context.Background(),
+  140,
+  6989,
+  1904,
+)
+
+if err == nil {
+  fmt.Println("File deleted successfully")
+}
+```
+
 {% /code %}

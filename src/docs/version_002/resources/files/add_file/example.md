@@ -121,6 +121,29 @@ let response = client.upload_file(request).await?;
 println!("New File Id is: {}", response.id);
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+file, _ := os.Open("test-attachment.txt")
+
+response, _ := client.Files.Save(
+  context.Background(),
+  onspring.SaveFileRequest{
+    RecordId:     140,
+    FieldId:      6989,
+    Notes:        "Updating record with attachment.",
+    FileName:     "test-attachment.txt",
+    FileContents: file,
+  },
+)
+
+fmt.Printf("New File Id is: %d\n", response.Id)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

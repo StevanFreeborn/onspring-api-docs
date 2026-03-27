@@ -154,6 +154,32 @@ for record in response.items.unwrap_or_default() {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+page, _ := client.Records.Query(
+  context.Background(),
+  onspring.QueryRecordsRequest{
+    AppId:      195,
+    Filter:     "6983 eq 'Test Task 5'",
+    FieldIds:   []int{6983, 6986, 6987, 6985, 6984},
+    DataFormat: "Formatted",
+  },
+)
+
+for _, record := range page.Items {
+  fmt.Printf(
+    "AppId: %d, RecordId: %d\n",
+    record.AppId,
+    record.RecordId,
+  )
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

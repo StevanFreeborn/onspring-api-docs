@@ -91,6 +91,28 @@ for report in response.items.unwrap_or_default() {
 }
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+page, _ := client.Reports.List(
+  context.Background(),
+  195,
+)
+
+for _, report := range page.Items {
+  fmt.Printf(
+    "%d, %d, %s\n",
+    report.Id,
+    report.AppId,
+    report.Name,
+  )
+}
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}

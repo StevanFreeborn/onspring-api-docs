@@ -71,4 +71,22 @@ client.delete_record(195, 140).await?;
 println!("Record deleted");
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+err := client.Records.Delete(
+  context.Background(),
+  195,
+  140,
+)
+
+if err == nil {
+  fmt.Println("Record deleted")
+}
+```
+
 {% /code %}

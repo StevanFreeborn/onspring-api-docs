@@ -73,6 +73,21 @@ println!(
 );
 ```
 
+```go
+import onspring "github.com/StevanFreeborn/onspring-api-sdk-go"
+
+client := onspring.NewClient(
+  "000000ffffff000000ffffff/00000000-ffff-0000-ffff-000000000000",
+)
+
+app, _ := client.Apps.Get(
+  context.Background(),
+  195,
+)
+
+fmt.Printf("%d, %s\n", app.Id, app.Name)
+```
+
 {% /code %}
 
 {% code heading="RESPONSE" defaultLanguage="json" %}
