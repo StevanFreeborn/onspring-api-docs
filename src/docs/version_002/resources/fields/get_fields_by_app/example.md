@@ -42,7 +42,7 @@ for (const field of fields) {
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -52,16 +52,17 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetFieldsByAppId(appId=195)
+response = client.get_fields_by_app_id(app_id=195)
 
-print(f'Status Code: {response.statusCode}')
-print(f'Page Size: {response.data.pageSize}')
-print(f'Page Number: {response.data.pageNumber}')
-print(f'Total Pages: {response.data.totalPages}')
-print(f'Total Records: {response.data.totalRecords}')
+print(f'Status Code: {response.status_code}')
+print(f'Page Size: {response.data.page_size}')
+print(f'Page Number: {response.data.page_number}')
+print(f'Total Pages: {response.data.total_pages}')
+print(f'Total Records: {response.data.total_records}')
 
 for field in response.data.fields:
   print(f'Field Id: {field.id}')
+
 ```
 
 ```rust

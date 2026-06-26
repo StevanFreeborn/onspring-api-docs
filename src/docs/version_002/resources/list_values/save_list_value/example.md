@@ -64,8 +64,8 @@ console.log(itemId);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import ListItemRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import ListItemRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -76,17 +76,18 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 request = ListItemRequest(
-  listId=906,
+  list_id=906,
   name='Not Started',
   id=None,
-  numericValue=0,
+  numeric_value=0,
   color='#ffffff'
 )
 
-response = client.AddOrUpdateListItem(request)
+response = client.add_or_update_list_item(request)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Id: {response.data.id}')
+
 ```
 
 ```rust

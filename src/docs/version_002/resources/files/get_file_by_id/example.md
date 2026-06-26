@@ -51,7 +51,7 @@ file.stream.pipe(fs.createWriteStream(file.fileName));
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -61,19 +61,20 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetFileById(recordId=1, fieldId=6989, fileId=89)
+response = client.get_file_by_id(record_id=1, field_id=6989, fileId=89)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Name: {response.data.file.name}')
-print(f'Content Type: {response.data.file.contentType}')
-print(f'Content Length: {response.data.file.contentLength}')
+print(f'Content Type: {response.data.file.content_type}')
+print(f'Content Length: {response.data.file.content_length}')
 
-filePath = f'C:\\Users\\sfree\\Documents\\Temp\\{response.data.file.name}'
+file_path = f'C:\\Users\\sfree\\Documents\\Temp\\{response.data.file.name}'
 
-with open(filePath, "wb") as file:
+with open(file_path, "wb") as file:
   file.write(response.data.file.content)
 
-print(f'File Location: {filePath}')
+print(f'File Location: {file_path}')
+
 ```
 
 ```rust

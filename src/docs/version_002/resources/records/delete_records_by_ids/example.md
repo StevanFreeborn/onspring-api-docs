@@ -55,8 +55,8 @@ res.statusCode === 204
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import DeleteBatchRecordsRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import DeleteBatchRecordsRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -66,11 +66,12 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-request = DeleteBatchRecordsRequest(appId=195, recordIds=[138, 139])
-response = client.DeleteRecordsByIds(request)
+request = DeleteBatchRecordsRequest(app_id=195, record_ids=[138, 139])
+response = client.delete_records_by_ids(request)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Message: {response.message}')
+
 ```
 
 ```rust

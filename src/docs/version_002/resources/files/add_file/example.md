@@ -69,8 +69,8 @@ console.log(fileId);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import SaveFileRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import SaveFileRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -81,19 +81,20 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 request = SaveFileRequest(
-  recordId=140,
-  fieldId=6989,
-  fileName='test-attachment.txt',
-  filePath='test-attachment.txt',
-  contentType='text/plain',
+  record_id=140,
+  field_id=6989,
+  file_name='test-attachment.txt',
+  file_path='test-attachment.txt',
+  content_type='text/plain',
   notes='Updating record with attachment.',
-  modifiedDate=datetime.now()
+  modified_date=datetime.now()
 )
 
-response = client.SaveFile(request)
+response = client.save_file(request)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'File Id: {response.data.id}')
+
 ```
 
 ```rust

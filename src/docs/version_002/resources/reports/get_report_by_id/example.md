@@ -41,8 +41,8 @@ console.log(report);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import GetReportByIdRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import GetReportByIdRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -52,16 +52,17 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-request = GetReportByIdRequest(reportId=613)
-response = client.GetReportById(request)
+request = GetReportByIdRequest(report_id=613)
+response = client.get_report_by_id(request)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print('Columns:')
 print(f'{", ".join(response.data.columns)}')
 print('Rows:')
 
 for row in response.data.rows:
-  print(f'Record Id {row.recordId}: {", ".join([str(cell) for cell in row.cells])}')
+  print(f'Record Id {row.record_id}: {", ".join([str(cell) for cell in row.cells])}')
+
 ```
 
 ```rust
