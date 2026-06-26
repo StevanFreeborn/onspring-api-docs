@@ -41,8 +41,8 @@ for (const app of apps) {
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import GetRecordsByAppRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import GetRecordsByAppRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -53,22 +53,23 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 request = GetRecordsByAppRequest(appId=195)
-response = client.GetRecordsByAppId(request)
+response = client.get_records_by_app_id(request)
 
-print(f'Status Code: {response.statusCode}')
-print(f'Page Size: {response.data.pageSize}')
-print(f'Page Number: {response.data.pageNumber}')
-print(f'Total Pages: {response.data.totalPages}')
-print(f'Total Records: {response.data.totalRecords}')
+print(f'Status Code: {response.status_code}')
+print(f'Page Size: {response.data.page_size}')
+print(f'Page Number: {response.data.page_number}')
+print(f'Total Pages: {response.data.total_pages}')
+print(f'Total Records: {response.data.total_records}')
 
 for record in response.data.records:
-  print(f'AppId: {record.appId}')
-  print(f'RecordId: {record.recordId}')
+  print(f'AppId: {record.app_id}')
+  print(f'RecordId: {record.record_id}')
 
   for field in record.fields:
     print(f'Type: {field.type}')
-    print(f'FieldId: {field.fieldId}')
-    print(f'Value: {field.GetResultValueString()}')
+    print(f'FieldId: {field.field_id}')
+    print(f'Value: {field.value}')
+
 ```
 
 ```rust

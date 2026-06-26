@@ -68,8 +68,8 @@ for (const record of records) {
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import GetBatchRecordsRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import GetBatchRecordsRequest
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -80,24 +80,25 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 request = GetBatchRecordsRequest(
-  appId=195,
-  recordIds=[1],
-  fieldIds=[6983, 6986, 6987, 6985, 6984],
-  dataFormat='Raw'
+  app_id=195,
+  record_ids=[1],
+  field_ids=[6983, 6986, 6987, 6985, 6984],
+  data_format='Raw'
 )
-response = client.GetRecordsByIds(request)
+response = client.get_records_by_ids(request)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Count: {response.data.count}')
 
 for record in response.data.records:
-  print(f'AppId: {record.appId}')
-  print(f'RecordId: {record.recordId}')
+  print(f'AppId: {record.app_id}')
+  print(f'RecordId: {record.record_id}')
 
   for field in record.fields:
     print(f'Type: {field.type}')
-    print(f'FieldId: {field.fieldId}')
-    print(f'Value: {field.GetResultValueString()}')
+    print(f'FieldId: {field.field_id}')
+    print(f'Value: {field.value}')
+
 ```
 
 ```rust

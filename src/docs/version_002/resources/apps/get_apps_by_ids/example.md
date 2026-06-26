@@ -46,7 +46,7 @@ for (const app of apps) {
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -56,15 +56,16 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetAppsByIds(appIds=[195, 240])
+response = client.get_apps_by_ids(app_ids=[195, 240])
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Count: {response.data.count}')
 
 for app in response.data.apps:
   print(f'Id: {app.id}')
   print(f'Name: {app.name}')
   print(f'href: {app.href}')
+
 ```
 
 ```rust

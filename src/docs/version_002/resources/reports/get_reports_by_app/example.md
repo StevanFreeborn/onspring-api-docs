@@ -42,7 +42,7 @@ for (const report of reports) {
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -52,16 +52,18 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetReportsByAppId(appId=195)
+app_id = 195
+response = client.get_reports_by_app_id(app_id=app_id)
 
-print(f'Status Code: {response.statusCode}')
-print(f'App Id: {appId}')
+print(f'Status Code: {response.status_code}')
+print(f'App Id: {app_id}')
 print('Reports:')
 
 for report in response.data.reports:
   print(f' Id: {report.id}')
   print(f' Name: {report.name}')
   print(f' Description: {report.description}')
+
 ```
 
 ```rust

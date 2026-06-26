@@ -42,7 +42,7 @@ res.statusCode === 204
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -52,12 +52,13 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.DeleteFileById(recordId=140, fieldId=6989, fileId=1904)
+response = client.delete_file_by_id(record_id=140, field_id=6989, fileId=1904)
 
 if response.status_code == 204:
   print('File deleted')
 else:
   print('Error deleting file')
+
 ```
 
 ```rust

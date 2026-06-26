@@ -37,7 +37,7 @@ console.log(res);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -48,12 +48,13 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 
-canConnect = client.CanConnect()
+canConnect = client.can_connect()
 
-if canConnect:
+if can_connect:
   print('Connected successfully')
 else:
   print('Attempt to connect failed')
+
 ```
 
 ```rust

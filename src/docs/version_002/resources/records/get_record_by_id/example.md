@@ -52,22 +52,23 @@ console.log(record);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import GetRecordByIdRequest
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import GetRecordByIdRequest
 from configparser import ConfigParser
 
 request = GetRecordByIdRequest(appId=195, recordId=1)
 
-response = client.GetRecordById(request)
+response = client.get_record_by_id(request)
 
-print(f'Status Code: {response.statusCode}')
-print(f'AppId: {response.data.appId}')
-print(f'RecordId: {response.data.recordId}')
+print(f'Status Code: {response.status_code}')
+print(f'AppId: {response.data.app_id}')
+print(f'RecordId: {response.data.record_id}')
 
 for field in response.data.fields:
   print(f'Type: {field.type}')
-  print(f'FieldId: {field.fieldId}')
-  print(f'Value: {field.GetResultValueString()}')
+  print(f'FieldId: {field.field_id}')
+  print(f'Value: {field.value}')
+
 ```
 
 ```rust

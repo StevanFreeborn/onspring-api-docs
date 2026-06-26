@@ -48,7 +48,7 @@ res.statusCode === 204
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -58,13 +58,14 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.DeleteListItem(
-  listId=906,
+response = client.delete_list_item(
+  list_id=906,
   itemId='36f94d8c-2b9d-465e-9ad1-ede04109efc9'
 )
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Message: {response.message}')
+
 ```
 
 ```rust

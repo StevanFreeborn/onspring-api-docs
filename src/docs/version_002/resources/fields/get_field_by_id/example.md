@@ -38,7 +38,7 @@ console.log(field);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -48,10 +48,11 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetFieldById(fieldId=6986)
+response = client.get_field_by_id(field_id=6986)
 
-print(f'Status Code: {response.statusCode}')
-print(f'Field Id: {response.data.id}')
+print(f'Status Code: {response.status_code}')
+print(f'Field Id: {response.data.field.id}')
+
 ```
 
 ```rust

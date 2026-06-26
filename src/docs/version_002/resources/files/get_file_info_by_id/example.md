@@ -37,7 +37,7 @@ console.log(fileInfo);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -47,10 +47,11 @@ key = cfg['prod']['key']
 url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
-response = client.GetFileInfoById(recordId=1, fieldId=6989, fileId=89)
+response = client.get_file_info_by_id(record_id=1, field_id=6989, fileId=89)
 
-print(f'Name: {response.data.fileInfo.name}')
-print(f'Content Type: {response.data.fileInfo.contentType}')
+print(f'Name: {response.data.file_info.name}')
+print(f'Content Type: {response.data.fileInfo.content_type}')
+
 ```
 
 ```rust

@@ -37,7 +37,7 @@ console.log(app);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
+from onspring_api_sdk import OnspringClient
 from configparser import ConfigParser
 
 cfg = ConfigParser()
@@ -48,12 +48,13 @@ url = cfg['prod']['url']
 
 client = OnspringClient(url, key)
 
-response = client.GetAppById(appId=195)
+response = client.get_app_by_id(app_id=195)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'id: {response.data.app.id}')
 print(f'Name: {response.data.app.name}')
 print(f'href: {response.data.app.href}')
+
 ```
 
 ```rust

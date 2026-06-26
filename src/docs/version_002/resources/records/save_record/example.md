@@ -87,40 +87,42 @@ console.log(newRecordId);
 ```
 
 ```python
-from OnspringApiSdk.OnspringClient import OnspringClient
-from OnspringApiSdk.Models import StringFieldValue, GuidFieldValue, DateFieldValue, IntegerListValue, Record
+from onspring_api_sdk import OnspringClient
+from onspring_api_sdk.models import StringFieldValue, GuidFieldValue, DateFieldValue, IntegerListValue, Record
+import uuid
+from datetime import datetime
 from configparser import ConfigParser
+
+cfg = ConfigParser()
+cfg.read('config.ini')
+
+key = cfg['prod']['key']
+url = cfg['prod']['url']
+
+client = OnspringClient(url, key)
 
 fields = []
 
-fields.append(StringFieldValue(6983, 'A New Test Task'))
-fields.append(StringFieldValue(6984, 'This is a test task.'))
+fields.append(StringFieldValue(field_id=6983, value='A New Test Task'))
+fields.append(StringFieldValue(field_id=6984, value='This is a test task.'))
 fields.append(
-  GuidFieldValue(
-    6986,
-    uuid.UUID('4118d53a-9121-4345-8682-07f23d606daa')
-  )
+  GuidFieldValue(field_id=6986, value=uuid.UUID('4118d53a-9121-4345-8682-07f23d606daa'))
 )
 fields.append(
-  DateFieldValue(
-    6985,
-    datetime.datetime(2021, 12, 25)
-  )
+  DateFieldValue(field_id=6985, value=datetime(2021, 12, 25))
 )
-fields.append(IntegerListValue(6987, [4]))
+fields.append(IntegerListValue(field_id=6987, value=[4]))
 
-record = Record(
-  appId=195,
-  fields
-)
+record = Record(app_id=195, fields=fields)
 
-response = client.AddOrUpdateRecord(record)
+response = client.add_or_update_record(record)
 
-print(f'Status Code: {response.statusCode}')
+print(f'Status Code: {response.status_code}')
 print(f'Id: {response.data.id}')
 
 for warning in response.data.warnings:
   print(f'Warning: {warning}')
+
 ```
 
 ```rust
